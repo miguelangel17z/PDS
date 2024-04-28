@@ -14,15 +14,17 @@ import java.sql.Time;
  import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
 import interfaz_grafica.Interfaz;
+import java.awt.event.ActionEvent;
 
 public class AgregarActividad extends  javax.swing.JFrame {
 
     ConexionMySql con = new ConexionMySql();
     Connection cn = con.conectar();
    public static String usuarioG = Interfaz.UsernameGuardado;
-
+   public static String opcionSeleccionada = "";
     public AgregarActividad() {
         initComponents();
+        
     }
 
     /**
@@ -34,18 +36,24 @@ public class AgregarActividad extends  javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
+        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         jPanel1 = new javax.swing.JPanel();
         actividadFecha = new com.toedter.calendar.JDateChooser();
         guardarActividad = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        actividad = new javax.swing.JTextArea();
         horaAct = new com.toedter.components.JSpinField();
         minutoAct = new com.toedter.components.JSpinField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        tipo = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        actividad = new javax.swing.JTextArea();
+        comboBox = new javax.swing.JComboBox<>();
+
+        jRadioButtonMenuItem1.setSelected(true);
+        jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(564, 420));
@@ -61,7 +69,7 @@ public class AgregarActividad extends  javax.swing.JFrame {
         actividadFecha.setForeground(new java.awt.Color(102, 102, 102));
         actividadFecha.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         actividadFecha.setMaximumSize(new java.awt.Dimension(82, 38));
-        jPanel1.add(actividadFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 360, 42));
+        jPanel1.add(actividadFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 360, 42));
 
         guardarActividad.setBackground(new java.awt.Color(204, 204, 255));
         guardarActividad.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
@@ -74,22 +82,11 @@ public class AgregarActividad extends  javax.swing.JFrame {
         });
         jPanel1.add(guardarActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 200, 50));
 
-        actividad.setBackground(new java.awt.Color(204, 255, 255));
-        actividad.setColumns(1);
-        actividad.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        actividad.setForeground(new java.awt.Color(102, 102, 102));
-        actividad.setRows(1);
-        actividad.setTabSize(1);
-        actividad.setBorder(null);
-        jScrollPane2.setViewportView(actividad);
-
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 360, 42));
-
         horaAct.setBackground(new java.awt.Color(204, 255, 255));
-        jPanel1.add(horaAct, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, 110, 42));
+        jPanel1.add(horaAct, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, 110, 42));
 
         minutoAct.setBackground(new java.awt.Color(204, 255, 255));
-        jPanel1.add(minutoAct, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, 100, 42));
+        jPanel1.add(minutoAct, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 300, 100, 42));
 
         jLabel1.setFont(new java.awt.Font("Montserrat", 0, 28)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
@@ -101,25 +98,54 @@ public class AgregarActividad extends  javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("MINUTO");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 270, 120, 30));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 260, 120, 30));
 
-        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel4.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel4.setText("NOMBRE ACTIVIDAD");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 300, 30));
+        tipo.setBackground(new java.awt.Color(0, 0, 0));
+        tipo.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        tipo.setForeground(new java.awt.Color(102, 102, 102));
+        tipo.setText("TIPO:");
+        jPanel1.add(tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 300, 30));
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("   HORA |");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 140, 30));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, 140, 30));
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
         jLabel6.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(102, 102, 102));
         jLabel6.setText("FECHA");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 300, 30));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 300, 30));
+
+        jLabel7.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel7.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel7.setText("NOMBRE ACTIVIDAD");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 300, 30));
+
+        actividad.setBackground(new java.awt.Color(204, 255, 255));
+        actividad.setColumns(1);
+        actividad.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        actividad.setForeground(new java.awt.Color(102, 102, 102));
+        actividad.setRows(1);
+        actividad.setTabSize(1);
+        actividad.setBorder(null);
+        jScrollPane3.setViewportView(actividad);
+
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 360, 42));
+
+        comboBox.setBackground(new java.awt.Color(204, 255, 255));
+        comboBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        comboBox.setForeground(new java.awt.Color(0, 102, 102));
+        comboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Escoger", "Imprescindible", "Hobby" }));
+        comboBox.setToolTipText("");
+        comboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(comboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 360, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -129,7 +155,7 @@ public class AgregarActividad extends  javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
         );
 
         pack();
@@ -138,62 +164,91 @@ public class AgregarActividad extends  javax.swing.JFrame {
     private void guardarActividadActionPerformed(java.awt.event.ActionEvent evt) {                                                 
   
  int minutos = (int) minutoAct.getValue(); 
-
     java.util.Date fechaSeleccionada = actividadFecha.getDate();
-    if (fechaSeleccionada != null) {
+    String actividadTexto = actividad.getText();
+    if (fechaSeleccionada != null && !opcionSeleccionada.isBlank() && actividadTexto != null) {
+        
         java.sql.Date fecha = new java.sql.Date(fechaSeleccionada.getTime());
-
         int hora = (int) horaAct.getValue();
-
 Time horaSql = Time.valueOf(String.format("%02d:%02d:00", hora, minutos));
+        
+    
+      
+       
 
-        String actividadTexto = actividad.getText();
+        
 
         try {
-            String sql = "INSERT INTO actividades (username, fecha, hora, actividad) VALUES (?, ?, ?, ?)";
+            String sql = "INSERT INTO actividades (username, fecha, hora, actividad, tipo) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement ps = cn.prepareStatement(sql);
              ps.setString(1, usuarioG);
             ps.setDate(2, fecha);
             ps.setTime(3, horaSql);
             ps.setString(4, actividadTexto);
+                      ps.setString(5, opcionSeleccionada);
+
 
             int rowsInserted = ps.executeUpdate();
 
             if (rowsInserted > 0) {
                 JOptionPane.showMessageDialog(this, "Actividad agregada correctamente para el usuario: " + usuarioG, "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                 limpiarDatos();
             } else {
                 JOptionPane.showMessageDialog(this, "Error al agregar la actividad para el usuario: " + usuarioG, "Error", JOptionPane.ERROR_MESSAGE);
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(this, "Error al ejecutar la consulta SQL: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
+             
     } else {
-        JOptionPane.showMessageDialog(this, "Seleccione una fecha válida", "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Complete todos los datos de manera correcta", "Error", JOptionPane.ERROR_MESSAGE);
     }
-
-
-
 
 
     }                                                
 
-    /**
-     * @param args the command line arguments
-     */
+    private void comboBoxActionPerformed(java.awt.event.ActionEvent evt) {                                         
+ int index = comboBox.getSelectedIndex();
+        if (index != -1 && comboBox.getItemAt(index).equals("Escoger")) {
+            comboBox.removeItemAt(index); 
+        }
+    opcionSeleccionada = (String) comboBox.getSelectedItem();
+         
+    }                                        
+
+     void limpiarDatos(){
+        
+        actividad.setText("");
+        actividadFecha.setDate(null);
+        horaAct.setValue(0);
+        minutoAct.setValue(0);
+        
+        if (!comboBox.getItemAt(0).equals("Escoger")) {
+        comboBox.insertItemAt("Escoger", 0);
+    }
+    comboBox.setSelectedIndex(0);
+    super.dispose();
+    }
+            
+
+        
   
 
     // Variables declaration - do not modify                     
     private javax.swing.JTextArea actividad;
     private com.toedter.calendar.JDateChooser actividadFecha;
+    private javax.swing.JComboBox<String> comboBox;
     private javax.swing.JButton guardarActividad;
     private com.toedter.components.JSpinField horaAct;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
+    private javax.swing.JScrollPane jScrollPane3;
     private com.toedter.components.JSpinField minutoAct;
+    private javax.swing.JLabel tipo;
     // End of variables declaration                   
 }
