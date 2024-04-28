@@ -9,10 +9,15 @@ public class Healtime {
 
     public static void main(String[] args) {
         
-        
-Interfaz panta = new Interfaz();
-      panta.setVisible(true);
-panta.setLocationRelativeTo(null);
+inicializarComponentes();        
+
      
     }
+    
+  public static void inicializarComponentes(){
+      Interfaz panta = new Interfaz();
+      panta.setVisible(true);
+panta.setLocationRelativeTo(null);
+  } 
+    
 }
