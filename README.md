@@ -12,4 +12,4 @@ Pantalla1: Es la pantalla principal del programa, en esta se encuentra la base d
 
 AgregarActividad: Donde el usuario puede ingresar y guardar los datos de su nueva actividad.
 
-Nota:La explicacion detallada de cada clase en el video adjuntado en la entrega 3.
+Nota: La explicacion detallada de cada clase en el video adjuntado en la entrega 3.
