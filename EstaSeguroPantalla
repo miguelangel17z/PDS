@@ -1,0 +1,175 @@
+
+package interfaz_grafica;
+
+import conexion.ConexionMySql;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
+public class EstaSeguroPantalla extends javax.swing.JFrame {
+   
+    ConexionMySql con = new ConexionMySql();
+Connection cn = con.conectar();
+public static boolean eliminado = false;
+private String username = Interfaz.UsernameGuardado;
+ static boolean instancia = false;
+    public EstaSeguroPantalla() {
+        initComponents();
+       
+
+    }
+
+  
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        cancelarBoton = new javax.swing.JButton();
+        eliminarBoton = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
+
+        jPanel1.setBackground(new java.awt.Color(37, 21, 92));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("<html>¿Esta seguro que desea eliminar la actividad");
+
+        cancelarBoton.setBackground(new java.awt.Color(24, 0, 55));
+        cancelarBoton.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        cancelarBoton.setForeground(new java.awt.Color(255, 255, 255));
+        cancelarBoton.setText("CANCELAR");
+        cancelarBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarBotonActionPerformed(evt);
+            }
+        });
+
+        eliminarBoton.setBackground(new java.awt.Color(191, 52, 39));
+        eliminarBoton.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        eliminarBoton.setForeground(new java.awt.Color(255, 255, 255));
+        eliminarBoton.setText("ELIMINAR");
+        eliminarBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarBotonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(eliminarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addComponent(cancelarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cancelarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(eliminarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(34, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    private void cancelarBotonActionPerformed(java.awt.event.ActionEvent evt) {                                              
+   dispose();
+        EliminarActividad elAct = new EliminarActividad();
+            instancia = false;
+                elAct.limpiarDatos();
+            elAct.setVisible(true);
+            elAct.setLocationRelativeTo(null);
+        
+        
+    
+    }                                             
+
+    private void eliminarBotonActionPerformed(java.awt.event.ActionEvent evt) {                                              
+    
+        try{PreparedStatement ps = cn.prepareStatement("DELETE FROM `actividades` WHERE actividad = ? AND fecha = ? and username = ?");
+                         ps.setString(1,EliminarActividad.actividadNombre );
+                         ps.setDate(2, Pantalla1.fechaS);
+                         ps.setString(3, username);    
+                         System.out.println(EliminarActividad.actividadNombre);
+                         System.out.println(Pantalla1.fechaS);
+                         System.out.println(username);
+                        
+      int filasAfectadas = ps.executeUpdate(); 
+        
+        if (filasAfectadas > 0) {
+            JOptionPane.showMessageDialog(null, "Registro eliminado correctamente.");
+            eliminado = true;
+            dispose();
+            
+            EliminarActividad elAct = new EliminarActividad();
+            elAct.limpiarDatos();
+            elAct.setVisible(true);
+            elAct.setLocationRelativeTo(null);
+                         instancia = false;
+
+        
+        } else{
+             JOptionPane.showMessageDialog(null, "No se encontro registro de la actividad en la fecha seleccionada.");
+              instancia = false;
+             dispose();
+             EliminarActividad elAct = new EliminarActividad();
+                elAct.limpiarDatos();
+            elAct.setVisible(true);
+            elAct.setLocationRelativeTo(null);
+                       
+
+        }
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(null, "Error al eliminar el registro: " + e.getMessage()); 
+         instancia = false;
+        dispose();
+        EliminarActividad elAct = new EliminarActividad();
+           elAct.limpiarDatos();
+            elAct.setVisible(true);
+            elAct.setLocationRelativeTo(null);
+            
+} 
+        
+       
+        
+        
+    }                                             
+
+ 
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton cancelarBoton;
+    private javax.swing.JButton eliminarBoton;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    // End of variables declaration                   
+}
