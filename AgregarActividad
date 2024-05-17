@@ -1,29 +1,32 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package interfaz_grafica;
 
 import conexion.ConexionMySql;
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
+import java.util.ArrayList;
  import javax.swing.JOptionPane;
-import javax.swing.JSpinner;
-import interfaz_grafica.Interfaz;
-import java.awt.event.ActionEvent;
 
 public class AgregarActividad extends  javax.swing.JFrame {
 
     ConexionMySql con = new ConexionMySql();
+    int xMouse, yMouse;
     Connection cn = con.conectar();
+    recomiendamePantalla rp = new recomiendamePantalla();
    public static String usuarioG = Interfaz.UsernameGuardado;
    public static String opcionSeleccionada = "";
-    public AgregarActividad() {
+  static String nombreNuevoHobby = "";
+  String nombre = "";
+    public AgregarActividad(String nombreActividad) {
         initComponents();
+       
+       nombreActividad = rp.getNombreActividad();
+      actividad.setText(nombreActividad);
         
     }
 
@@ -51,16 +54,21 @@ public class AgregarActividad extends  javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         actividad = new javax.swing.JTextArea();
         comboBox = new javax.swing.JComboBox<>();
+        recomiendameBoton = new javax.swing.JButton();
+        cositaArriba = new javax.swing.JPanel();
+        panelX = new javax.swing.JPanel();
+        xLabel = new javax.swing.JLabel();
 
         jRadioButtonMenuItem1.setSelected(true);
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(564, 420));
         setMinimumSize(new java.awt.Dimension(564, 420));
+        setUndecorated(true);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(17, 18, 17));
         jPanel1.setMaximumSize(new java.awt.Dimension(564, 420));
         jPanel1.setMinimumSize(new java.awt.Dimension(564, 420));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -69,75 +77,75 @@ public class AgregarActividad extends  javax.swing.JFrame {
         actividadFecha.setForeground(new java.awt.Color(102, 102, 102));
         actividadFecha.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         actividadFecha.setMaximumSize(new java.awt.Dimension(82, 38));
-        jPanel1.add(actividadFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 360, 42));
+        jPanel1.add(actividadFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 360, 40));
 
-        guardarActividad.setBackground(new java.awt.Color(204, 204, 255));
-        guardarActividad.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
-        guardarActividad.setForeground(new java.awt.Color(51, 51, 51));
+        guardarActividad.setBackground(new java.awt.Color(3, 7, 42));
+        guardarActividad.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
+        guardarActividad.setForeground(new java.awt.Color(255, 255, 255));
         guardarActividad.setText("AGREGAR");
         guardarActividad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 guardarActividadActionPerformed(evt);
             }
         });
-        jPanel1.add(guardarActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 200, 50));
+        jPanel1.add(guardarActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 200, 50));
 
         horaAct.setBackground(new java.awt.Color(204, 255, 255));
-        jPanel1.add(horaAct, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, 110, 42));
+        jPanel1.add(horaAct, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, 80, 40));
 
         minutoAct.setBackground(new java.awt.Color(204, 255, 255));
-        jPanel1.add(minutoAct, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 300, 100, 42));
+        jPanel1.add(minutoAct, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, 70, 40));
 
         jLabel1.setFont(new java.awt.Font("Montserrat", 0, 28)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("NUEVA ACTIVIDAD");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 300, 40));
 
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel2.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel2.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setText("MINUTO");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 260, 120, 30));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 270, 120, 30));
 
-        tipo.setBackground(new java.awt.Color(0, 0, 0));
-        tipo.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
-        tipo.setForeground(new java.awt.Color(102, 102, 102));
+        tipo.setBackground(new java.awt.Color(204, 204, 204));
+        tipo.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        tipo.setForeground(new java.awt.Color(204, 204, 204));
         tipo.setText("TIPO:");
-        jPanel1.add(tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 300, 30));
+        jPanel1.add(tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 165, 300, 30));
 
-        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel5.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel5.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel5.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
         jLabel5.setText("   HORA |");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, 140, 30));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 270, 140, 30));
 
-        jLabel6.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel6.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel6.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel6.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
         jLabel6.setText("FECHA");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 300, 30));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 300, 30));
 
-        jLabel7.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel7.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel7.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel7.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setText("NOMBRE ACTIVIDAD");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 300, 30));
 
         actividad.setBackground(new java.awt.Color(204, 255, 255));
         actividad.setColumns(1);
-        actividad.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        actividad.setForeground(new java.awt.Color(102, 102, 102));
+        actividad.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        actividad.setForeground(new java.awt.Color(0, 0, 0));
         actividad.setRows(1);
         actividad.setTabSize(1);
         actividad.setBorder(null);
         jScrollPane3.setViewportView(actividad);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 360, 42));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 520, 40));
 
         comboBox.setBackground(new java.awt.Color(204, 255, 255));
-        comboBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        comboBox.setForeground(new java.awt.Color(0, 102, 102));
+        comboBox.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        comboBox.setForeground(new java.awt.Color(0, 0, 0));
         comboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Escoger", "Imprescindible", "Hobby" }));
         comboBox.setToolTipText("");
         comboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -145,7 +153,77 @@ public class AgregarActividad extends  javax.swing.JFrame {
                 comboBoxActionPerformed(evt);
             }
         });
-        jPanel1.add(comboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 360, 40));
+        jPanel1.add(comboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 520, 40));
+
+        recomiendameBoton.setBackground(new java.awt.Color(86, 71, 174));
+        recomiendameBoton.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        recomiendameBoton.setForeground(new java.awt.Color(255, 255, 255));
+        recomiendameBoton.setText("RECOMIENDAME");
+        recomiendameBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                recomiendameBotonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(recomiendameBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 270, 50));
+
+        cositaArriba.setBackground(new java.awt.Color(17, 18, 17));
+        cositaArriba.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                cositaArribaMouseDragged(evt);
+            }
+        });
+        cositaArriba.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                cositaArribaMousePressed(evt);
+            }
+        });
+
+        panelX.setBackground(new java.awt.Color(17, 18, 17));
+
+        xLabel.setBackground(new java.awt.Color(153, 153, 153));
+        xLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        xLabel.setForeground(new java.awt.Color(153, 153, 153));
+        xLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        xLabel.setText("<—");
+        xLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                xLabelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                xLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                xLabelMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelXLayout = new javax.swing.GroupLayout(panelX);
+        panelX.setLayout(panelXLayout);
+        panelXLayout.setHorizontalGroup(
+            panelXLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(xLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+        );
+        panelXLayout.setVerticalGroup(
+            panelXLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(xLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout cositaArribaLayout = new javax.swing.GroupLayout(cositaArriba);
+        cositaArriba.setLayout(cositaArribaLayout);
+        cositaArribaLayout.setHorizontalGroup(
+            cositaArribaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cositaArribaLayout.createSequentialGroup()
+                .addComponent(panelX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 593, Short.MAX_VALUE))
+        );
+        cositaArribaLayout.setVerticalGroup(
+            cositaArribaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cositaArribaLayout.createSequentialGroup()
+                .addComponent(panelX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 23, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(cositaArriba, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -166,10 +244,21 @@ public class AgregarActividad extends  javax.swing.JFrame {
  int minutos = (int) minutoAct.getValue(); 
     java.util.Date fechaSeleccionada = actividadFecha.getDate();
     String actividadTexto = actividad.getText();
+    int hora = (int) horaAct.getValue();
+
     if (fechaSeleccionada != null && !opcionSeleccionada.isBlank() && actividadTexto != null) {
+                    if(minutos >= 60 || minutos < 0 || hora >= 24 || hora < 0){
+                          JOptionPane.showMessageDialog(null, "Ingrese una hora valida","ERROR",JOptionPane.ERROR_MESSAGE);
+  
+        }else{
         
         java.sql.Date fecha = new java.sql.Date(fechaSeleccionada.getTime());
-        int hora = (int) horaAct.getValue();
+        
+        actividadTexto = actividadTexto.toUpperCase();
+      
+        
+        
+        
 Time horaSql = Time.valueOf(String.format("%02d:%02d:00", hora, minutos));
         
     
@@ -199,11 +288,13 @@ Time horaSql = Time.valueOf(String.format("%02d:%02d:00", hora, minutos));
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(this, "Error al ejecutar la consulta SQL: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
-             
+                    }        
     } else {
         JOptionPane.showMessageDialog(this, "Complete todos los datos de manera correcta", "Error", JOptionPane.ERROR_MESSAGE);
+            
     }
-
+    
+    
 
     }                                                
 
@@ -216,12 +307,47 @@ Time horaSql = Time.valueOf(String.format("%02d:%02d:00", hora, minutos));
          
     }                                        
 
+    private void recomiendameBotonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+rp.setVisible(true);
+rp.setLocationRelativeTo(null);
+limpiarDatos();
+
+    }                                                 
+
+    private void cositaArribaMousePressed(java.awt.event.MouseEvent evt) {                                          
+        xMouse = evt.getX();
+        yMouse = evt.getY();    
+    }                                         
+
+    private void cositaArribaMouseDragged(java.awt.event.MouseEvent evt) {                                          
+         int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }                                         
+
+    private void xLabelMouseExited(java.awt.event.MouseEvent evt) {                                   
+         panelX.setBackground(new Color(17,18,17));
+        xLabel.setForeground(new Color(153,153,153));
+    }                                  
+
+    private void xLabelMouseClicked(java.awt.event.MouseEvent evt) {                                    
+        limpiarDatos();
+    }                                   
+
+    private void xLabelMouseEntered(java.awt.event.MouseEvent evt) {                                    
+         panelX.setBackground(new Color(255,0,51));
+        xLabel.setForeground(Color.white);
+        
+    }                                   
+
      void limpiarDatos(){
         
         actividad.setText("");
         actividadFecha.setDate(null);
         horaAct.setValue(0);
         minutoAct.setValue(0);
+         panelX.setBackground(new Color(17,18,17));
+        xLabel.setForeground(new Color(153,153,153));
         
         if (!comboBox.getItemAt(0).equals("Escoger")) {
         comboBox.insertItemAt("Escoger", 0);
@@ -229,7 +355,28 @@ Time horaSql = Time.valueOf(String.format("%02d:%02d:00", hora, minutos));
     comboBox.setSelectedIndex(0);
     super.dispose();
     }
+    
+     
+     public void agregarHobby(){
+         actividad.setText(nombreNuevoHobby);  
+         comboBox.removeAllItems();
+         comboBox.addItem("Hobby");
+     }
             
+      public static void abrirVentana(String nombreActividad) {
+        AgregarActividad agregarActividad = new AgregarActividad(nombreActividad);
+        agregarActividad.setVisible(true);
+    }
+
+
+
+
+
+
+
+         
+          
+      
 
         
   
@@ -238,6 +385,7 @@ Time horaSql = Time.valueOf(String.format("%02d:%02d:00", hora, minutos));
     private javax.swing.JTextArea actividad;
     private com.toedter.calendar.JDateChooser actividadFecha;
     private javax.swing.JComboBox<String> comboBox;
+    private javax.swing.JPanel cositaArriba;
     private javax.swing.JButton guardarActividad;
     private com.toedter.components.JSpinField horaAct;
     private javax.swing.JLabel jLabel1;
@@ -249,6 +397,9 @@ Time horaSql = Time.valueOf(String.format("%02d:%02d:00", hora, minutos));
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JScrollPane jScrollPane3;
     private com.toedter.components.JSpinField minutoAct;
+    private javax.swing.JPanel panelX;
+    private javax.swing.JButton recomiendameBoton;
     private javax.swing.JLabel tipo;
+    private javax.swing.JLabel xLabel;
     // End of variables declaration                   
 }
