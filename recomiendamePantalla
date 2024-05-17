@@ -1,0 +1,2688 @@
+package interfaz_grafica;
+
+import java.awt.Color;
+import java.awt.Component;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+
+public class recomiendamePantalla extends javax.swing.JFrame {
+    ExplicacionActividadesPantalla expAct = new ExplicacionActividadesPantalla();
+    int contPantalla = 0;
+    String eleccionCategoria = "";
+   static String titulo = "";
+     String cuerpo = "";
+      public static JFrame instanciaPantalla;
+      
+    int xMouse, yMouse;
+    
+    public recomiendamePantalla() {
+        initComponents();
+        volverMenuRecomendacion();
+     deseleccionar();
+     instanciaPantalla = this;
+        
+    }
+    
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        librosMatematicasCheckBox = new javax.swing.JCheckBox();
+        lineaMatematicasCheckBox = new javax.swing.JCheckBox();
+        clasesMatematicasCheckBox = new javax.swing.JCheckBox();
+        gruposMatematicasCheckBox = new javax.swing.JCheckBox();
+        librosProgramacionCheckBox = new javax.swing.JCheckBox();
+        lineaProgramacionCheckBox = new javax.swing.JCheckBox();
+        talleresProgramacionCheckBox = new javax.swing.JCheckBox();
+        comunidadesProgramacionCheckBox = new javax.swing.JCheckBox();
+        librosLogicaCheckBox = new javax.swing.JCheckBox();
+        lineaLogicaCheckBox = new javax.swing.JCheckBox();
+        conferenciasLogicaCheckBox = new javax.swing.JCheckBox();
+        gruposLogicaCheckBox = new javax.swing.JCheckBox();
+        experimentosFisicaCheckBox = new javax.swing.JCheckBox();
+        librosFisicaCheckBox = new javax.swing.JCheckBox();
+        videosFisicaCheckBox = new javax.swing.JCheckBox();
+        lineaFisicaCheckBox = new javax.swing.JCheckBox();
+        softwareProduccionCheckBox = new javax.swing.JCheckBox();
+        instrumentosProduccionCheckBox = new javax.swing.JCheckBox();
+        composicionProduccionCheckBox = new javax.swing.JCheckBox();
+        musicosProduccionCheckBox = new javax.swing.JCheckBox();
+        clasesBaileCheckBox = new javax.swing.JCheckBox();
+        casaBaileCheckBox = new javax.swing.JCheckBox();
+        eventosBaileCheckBox = new javax.swing.JCheckBox();
+        estilosBaileCheckBox = new javax.swing.JCheckBox();
+        clasesCantoCheckBox = new javax.swing.JCheckBox();
+        karaokeCantoCheckBox = new javax.swing.JCheckBox();
+        estilosCantoCheckBox = new javax.swing.JCheckBox();
+        actividadesCantoCheckBox = new javax.swing.JCheckBox();
+        nuevoIdiomaCheckBox = new javax.swing.JCheckBox();
+        literaturaIdiomaCheckBox = new javax.swing.JCheckBox();
+        intercambiosIdiomaCheckBox = new javax.swing.JCheckBox();
+        otrosIdiomaCheckBox = new javax.swing.JCheckBox();
+        antologiaPoesiaCheckBox = new javax.swing.JCheckBox();
+        escribirPoesiaCheckBox = new javax.swing.JCheckBox();
+        eventosPoesiaCheckBox = new javax.swing.JCheckBox();
+        lineaPoesiaCheckBox = new javax.swing.JCheckBox();
+        desafiosLecturaCheckBox = new javax.swing.JCheckBox();
+        clubLecturaCheckBox = new javax.swing.JCheckBox();
+        filosofiaEscrituraCheckBox = new javax.swing.JCheckBox();
+        maratonLecturaCheckBox = new javax.swing.JCheckBox();
+        escrituraCreativaCheckBox = new javax.swing.JCheckBox();
+        clubEscrituraCheckBox = new javax.swing.JCheckBox();
+        talleresEscrituraCheckBox = new javax.swing.JCheckBox();
+        lineaEscrituraCheckBox = new javax.swing.JCheckBox();
+        cursosCineCheckBox = new javax.swing.JCheckBox();
+        clubCineCheckBox = new javax.swing.JCheckBox();
+        festivalesCineCheckBox = new javax.swing.JCheckBox();
+        cineLineaCheckBox = new javax.swing.JCheckBox();
+        clasesEsculturaCheckBox = new javax.swing.JCheckBox();
+        estudioEsculturaCheckBox = new javax.swing.JCheckBox();
+        talleresEscultaraCheckBox = new javax.swing.JCheckBox();
+        esculturaLineaChecklBox = new javax.swing.JCheckBox();
+        clasesDibujoCheckBox = new javax.swing.JCheckBox();
+        grupoDibujoCheckBox = new javax.swing.JCheckBox();
+        talleresDibujoCheckBox = new javax.swing.JCheckBox();
+        lineaDibujoCheckBox = new javax.swing.JCheckBox();
+        cursoPinturaCheckBox = new javax.swing.JCheckBox();
+        grupoPinturaCheckBox = new javax.swing.JCheckBox();
+        talleresPinturaCheckBox = new javax.swing.JCheckBox();
+        lineaPinturaCheckBox = new javax.swing.JCheckBox();
+        cantoCheckBox = new javax.swing.JCheckBox();
+        danzaCheckBox = new javax.swing.JCheckBox();
+        produccionCheckBox = new javax.swing.JCheckBox();
+        poesiaCheckBox = new javax.swing.JCheckBox();
+        escribirCheckBox = new javax.swing.JCheckBox();
+        leerCheckBox = new javax.swing.JCheckBox();
+        idiomaCheckBox = new javax.swing.JCheckBox();
+        matematicasCheckBox = new javax.swing.JCheckBox();
+        fisicaCheckBox = new javax.swing.JCheckBox();
+        logicaCheckBox = new javax.swing.JCheckBox();
+        programacionCheckBox = new javax.swing.JCheckBox();
+        pinturaCheckBox = new javax.swing.JCheckBox();
+        esculturaCheckBox = new javax.swing.JCheckBox();
+        dibujarCheckBox = new javax.swing.JCheckBox();
+        cineCheckBox = new javax.swing.JCheckBox();
+        musicaCheckBox = new javax.swing.JCheckBox();
+        arteCheckBox = new javax.swing.JCheckBox();
+        cienciaCheckBox = new javax.swing.JCheckBox();
+        literaturaCheckBox = new javax.swing.JCheckBox();
+        volverBoton = new javax.swing.JButton();
+        avanzarBoton = new javax.swing.JButton();
+        cositaArriba = new javax.swing.JPanel();
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\migue\\Pictures\\fondomelo.png")); // NOI18N
+        jLabel2.setText("jLabel1");
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(647, 443));
+        setMinimumSize(new java.awt.Dimension(647, 443));
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(640, 390));
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(17, 18, 17));
+        jPanel1.setMaximumSize(new java.awt.Dimension(640, 390));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("RECOMIENDAME");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 220, 40));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Roboto Thin", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("<html>MARQUE CON UNA X EL ELEMENTO DE LA LISTA QUE LE LLAMA LA ATENCIÓN");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 610, 60));
+
+        librosMatematicasCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        librosMatematicasCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        librosMatematicasCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        librosMatematicasCheckBox.setText("LIBROS DE MATEMÁTICAS");
+        librosMatematicasCheckBox.setBorder(null);
+        librosMatematicasCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                librosMatematicasCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(librosMatematicasCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 320, 40));
+
+        lineaMatematicasCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        lineaMatematicasCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        lineaMatematicasCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        lineaMatematicasCheckBox.setText("MATEMÁTICAS EN LINEA");
+        lineaMatematicasCheckBox.setToolTipText("");
+        lineaMatematicasCheckBox.setActionCommand("");
+        lineaMatematicasCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lineaMatematicasCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(lineaMatematicasCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 330, 40));
+
+        clasesMatematicasCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        clasesMatematicasCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        clasesMatematicasCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        clasesMatematicasCheckBox.setText("CLASES DE MATEMÁTICAS");
+        clasesMatematicasCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clasesMatematicasCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(clasesMatematicasCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 330, 40));
+
+        gruposMatematicasCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        gruposMatematicasCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        gruposMatematicasCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        gruposMatematicasCheckBox.setText("GRUPOS DE MATEMÁTICAS");
+        gruposMatematicasCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gruposMatematicasCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(gruposMatematicasCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 370, 40));
+
+        librosProgramacionCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        librosProgramacionCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        librosProgramacionCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        librosProgramacionCheckBox.setText("LIBROS DE PROGRAMACIÓN");
+        librosProgramacionCheckBox.setBorder(null);
+        librosProgramacionCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                librosProgramacionCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(librosProgramacionCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 320, 40));
+
+        lineaProgramacionCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        lineaProgramacionCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        lineaProgramacionCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        lineaProgramacionCheckBox.setText("PROGRAMACIÓN EN LINEA");
+        lineaProgramacionCheckBox.setToolTipText("");
+        lineaProgramacionCheckBox.setActionCommand("");
+        lineaProgramacionCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lineaProgramacionCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(lineaProgramacionCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 330, 40));
+
+        talleresProgramacionCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        talleresProgramacionCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        talleresProgramacionCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        talleresProgramacionCheckBox.setText("TALLERES DE PROGRAMACIÓN");
+        talleresProgramacionCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                talleresProgramacionCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(talleresProgramacionCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 330, 40));
+
+        comunidadesProgramacionCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        comunidadesProgramacionCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        comunidadesProgramacionCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        comunidadesProgramacionCheckBox.setText("COMUNIDADES DE PROGRAMACIÓN");
+        comunidadesProgramacionCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comunidadesProgramacionCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(comunidadesProgramacionCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 370, 40));
+
+        librosLogicaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        librosLogicaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        librosLogicaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        librosLogicaCheckBox.setText("LIBROS DE LOGICA");
+        librosLogicaCheckBox.setBorder(null);
+        librosLogicaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                librosLogicaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(librosLogicaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 320, 40));
+
+        lineaLogicaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        lineaLogicaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        lineaLogicaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        lineaLogicaCheckBox.setText("LOGICA EN LINEA");
+        lineaLogicaCheckBox.setToolTipText("");
+        lineaLogicaCheckBox.setActionCommand("");
+        lineaLogicaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lineaLogicaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(lineaLogicaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 330, 40));
+
+        conferenciasLogicaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        conferenciasLogicaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        conferenciasLogicaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        conferenciasLogicaCheckBox.setText("CONFERENCIAS SOBRE LOGICA");
+        conferenciasLogicaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                conferenciasLogicaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(conferenciasLogicaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 330, 40));
+
+        gruposLogicaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        gruposLogicaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        gruposLogicaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        gruposLogicaCheckBox.setText("GRUPOS DE LOGICA");
+        gruposLogicaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gruposLogicaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(gruposLogicaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 350, 40));
+
+        experimentosFisicaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        experimentosFisicaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        experimentosFisicaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        experimentosFisicaCheckBox.setText("EXPERIMENTOS SIMPLES");
+        experimentosFisicaCheckBox.setBorder(null);
+        experimentosFisicaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                experimentosFisicaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(experimentosFisicaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 320, 40));
+
+        librosFisicaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        librosFisicaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        librosFisicaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        librosFisicaCheckBox.setText("LIBROS DE FISICA");
+        librosFisicaCheckBox.setToolTipText("");
+        librosFisicaCheckBox.setActionCommand("");
+        librosFisicaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                librosFisicaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(librosFisicaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 330, 40));
+
+        videosFisicaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        videosFisicaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        videosFisicaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        videosFisicaCheckBox.setText("VIDEOS SOBRE FISICA");
+        videosFisicaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                videosFisicaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(videosFisicaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 330, 40));
+
+        lineaFisicaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        lineaFisicaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        lineaFisicaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        lineaFisicaCheckBox.setText("FISICA EN LINEA");
+        lineaFisicaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lineaFisicaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(lineaFisicaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 350, 40));
+
+        softwareProduccionCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        softwareProduccionCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        softwareProduccionCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        softwareProduccionCheckBox.setText("SOFTWARE DE PROD. MUSICAL");
+        softwareProduccionCheckBox.setBorder(null);
+        softwareProduccionCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                softwareProduccionCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(softwareProduccionCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 320, 40));
+
+        instrumentosProduccionCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        instrumentosProduccionCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        instrumentosProduccionCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        instrumentosProduccionCheckBox.setText("INTRUMENTOS");
+        instrumentosProduccionCheckBox.setToolTipText("");
+        instrumentosProduccionCheckBox.setActionCommand("");
+        instrumentosProduccionCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                instrumentosProduccionCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(instrumentosProduccionCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 330, 40));
+
+        composicionProduccionCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        composicionProduccionCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        composicionProduccionCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        composicionProduccionCheckBox.setText("COMPOSICIÓN MUSICAL");
+        composicionProduccionCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                composicionProduccionCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(composicionProduccionCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 330, 40));
+
+        musicosProduccionCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        musicosProduccionCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        musicosProduccionCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        musicosProduccionCheckBox.setText("COLABORAR CON OTROS MUSICOS");
+        musicosProduccionCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                musicosProduccionCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(musicosProduccionCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 350, 40));
+
+        clasesBaileCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        clasesBaileCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        clasesBaileCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        clasesBaileCheckBox.setText("CLASES DE BAILE");
+        clasesBaileCheckBox.setBorder(null);
+        clasesBaileCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clasesBaileCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(clasesBaileCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 320, 40));
+
+        casaBaileCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        casaBaileCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        casaBaileCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        casaBaileCheckBox.setText("BAILE EN CASA");
+        casaBaileCheckBox.setToolTipText("");
+        casaBaileCheckBox.setActionCommand("");
+        casaBaileCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                casaBaileCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(casaBaileCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 330, 40));
+
+        eventosBaileCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        eventosBaileCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        eventosBaileCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        eventosBaileCheckBox.setText("EVENTOS DE BAILE");
+        eventosBaileCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eventosBaileCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(eventosBaileCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 330, 40));
+
+        estilosBaileCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        estilosBaileCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        estilosBaileCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        estilosBaileCheckBox.setText("DISTINTOS ESTILOS DE BAILE");
+        estilosBaileCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                estilosBaileCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(estilosBaileCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 350, 40));
+
+        clasesCantoCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        clasesCantoCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        clasesCantoCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        clasesCantoCheckBox.setText("CLASES DE CANTO");
+        clasesCantoCheckBox.setBorder(null);
+        clasesCantoCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clasesCantoCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(clasesCantoCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 320, 40));
+
+        karaokeCantoCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        karaokeCantoCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        karaokeCantoCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        karaokeCantoCheckBox.setText("KARAOKE");
+        karaokeCantoCheckBox.setToolTipText("");
+        karaokeCantoCheckBox.setActionCommand("");
+        karaokeCantoCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                karaokeCantoCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(karaokeCantoCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 330, 40));
+
+        estilosCantoCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        estilosCantoCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        estilosCantoCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        estilosCantoCheckBox.setText("DISTINTOS ESTILOS MUSICALES");
+        estilosCantoCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                estilosCantoCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(estilosCantoCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 330, 40));
+
+        actividadesCantoCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        actividadesCantoCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        actividadesCantoCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        actividadesCantoCheckBox.setText("ACTIVIDADES DE CANTO");
+        actividadesCantoCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actividadesCantoCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(actividadesCantoCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 350, 40));
+
+        nuevoIdiomaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        nuevoIdiomaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        nuevoIdiomaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        nuevoIdiomaCheckBox.setText("APRENDER UN NUEVO IDIOMA");
+        nuevoIdiomaCheckBox.setBorder(null);
+        nuevoIdiomaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nuevoIdiomaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(nuevoIdiomaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 320, 40));
+
+        literaturaIdiomaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        literaturaIdiomaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        literaturaIdiomaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        literaturaIdiomaCheckBox.setText("LITERATURA EN OTROS IDIOMAS");
+        literaturaIdiomaCheckBox.setToolTipText("");
+        literaturaIdiomaCheckBox.setActionCommand("");
+        literaturaIdiomaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                literaturaIdiomaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(literaturaIdiomaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 330, 40));
+
+        intercambiosIdiomaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        intercambiosIdiomaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        intercambiosIdiomaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        intercambiosIdiomaCheckBox.setText("INTERCAMBIOS LINGÜISTICOS");
+        intercambiosIdiomaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                intercambiosIdiomaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(intercambiosIdiomaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 330, 40));
+
+        otrosIdiomaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        otrosIdiomaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        otrosIdiomaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        otrosIdiomaCheckBox.setText("EXPONERSE A OTROS IDIOMAS");
+        otrosIdiomaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                otrosIdiomaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(otrosIdiomaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 350, 40));
+
+        antologiaPoesiaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        antologiaPoesiaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        antologiaPoesiaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        antologiaPoesiaCheckBox.setText("ANTOLOGIA DE POESÍA");
+        antologiaPoesiaCheckBox.setBorder(null);
+        antologiaPoesiaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                antologiaPoesiaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(antologiaPoesiaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 270, 40));
+
+        escribirPoesiaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        escribirPoesiaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        escribirPoesiaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        escribirPoesiaCheckBox.setText("ESCRIBIR POESÍA");
+        escribirPoesiaCheckBox.setToolTipText("");
+        escribirPoesiaCheckBox.setActionCommand("");
+        escribirPoesiaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                escribirPoesiaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(escribirPoesiaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 270, 40));
+
+        eventosPoesiaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        eventosPoesiaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        eventosPoesiaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        eventosPoesiaCheckBox.setText("EVENTOS DE POESÍA");
+        eventosPoesiaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eventosPoesiaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(eventosPoesiaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 300, 40));
+
+        lineaPoesiaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        lineaPoesiaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        lineaPoesiaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        lineaPoesiaCheckBox.setText("POESÍA EN LINEA");
+        lineaPoesiaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lineaPoesiaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(lineaPoesiaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 240, 40));
+
+        desafiosLecturaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        desafiosLecturaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        desafiosLecturaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        desafiosLecturaCheckBox.setText("DESAFIOS DE LECTURA");
+        desafiosLecturaCheckBox.setBorder(null);
+        desafiosLecturaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                desafiosLecturaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(desafiosLecturaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 270, 40));
+
+        clubLecturaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        clubLecturaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        clubLecturaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        clubLecturaCheckBox.setText("CLUB DE LECTURA");
+        clubLecturaCheckBox.setToolTipText("");
+        clubLecturaCheckBox.setActionCommand("");
+        clubLecturaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clubLecturaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(clubLecturaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 270, 40));
+
+        filosofiaEscrituraCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        filosofiaEscrituraCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        filosofiaEscrituraCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        filosofiaEscrituraCheckBox.setText("FILOSOFIA EN LITERATURA");
+        filosofiaEscrituraCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                filosofiaEscrituraCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(filosofiaEscrituraCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 300, 40));
+
+        maratonLecturaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        maratonLecturaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        maratonLecturaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        maratonLecturaCheckBox.setText("MARATON LECTURA");
+        maratonLecturaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                maratonLecturaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(maratonLecturaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 240, 40));
+
+        escrituraCreativaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        escrituraCreativaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        escrituraCreativaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        escrituraCreativaCheckBox.setText("ESCRITURA CREATIVA");
+        escrituraCreativaCheckBox.setBorder(null);
+        escrituraCreativaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                escrituraCreativaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(escrituraCreativaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 270, 40));
+
+        clubEscrituraCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        clubEscrituraCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        clubEscrituraCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        clubEscrituraCheckBox.setText("CLUB DE ESCRITURA");
+        clubEscrituraCheckBox.setToolTipText("");
+        clubEscrituraCheckBox.setActionCommand("");
+        clubEscrituraCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clubEscrituraCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(clubEscrituraCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 270, 40));
+
+        talleresEscrituraCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        talleresEscrituraCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        talleresEscrituraCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        talleresEscrituraCheckBox.setText("TALLERES LITERARIOS");
+        talleresEscrituraCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                talleresEscrituraCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(talleresEscrituraCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 300, 40));
+
+        lineaEscrituraCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        lineaEscrituraCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        lineaEscrituraCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        lineaEscrituraCheckBox.setText("ESCRITURA EN LINEA");
+        lineaEscrituraCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lineaEscrituraCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(lineaEscrituraCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 240, 40));
+
+        cursosCineCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        cursosCineCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        cursosCineCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        cursosCineCheckBox.setText("CURSOS DE CINE");
+        cursosCineCheckBox.setBorder(null);
+        cursosCineCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cursosCineCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cursosCineCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 270, 40));
+
+        clubCineCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        clubCineCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        clubCineCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        clubCineCheckBox.setText("CLUB DE CINE");
+        clubCineCheckBox.setToolTipText("");
+        clubCineCheckBox.setActionCommand("");
+        clubCineCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clubCineCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(clubCineCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 270, 40));
+
+        festivalesCineCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        festivalesCineCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        festivalesCineCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        festivalesCineCheckBox.setText("FESTIVALES DE CINE");
+        festivalesCineCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                festivalesCineCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(festivalesCineCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 300, 40));
+
+        cineLineaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        cineLineaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        cineLineaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        cineLineaCheckBox.setText("CINE EN LINEA");
+        cineLineaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cineLineaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cineLineaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 240, 40));
+
+        clasesEsculturaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        clasesEsculturaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        clasesEsculturaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        clasesEsculturaCheckBox.setText("CLASES DE ESCULTURA");
+        clasesEsculturaCheckBox.setBorder(null);
+        clasesEsculturaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clasesEsculturaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(clasesEsculturaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 270, 40));
+
+        estudioEsculturaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        estudioEsculturaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        estudioEsculturaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        estudioEsculturaCheckBox.setText("ESTUDIO DE ESCULTURA");
+        estudioEsculturaCheckBox.setToolTipText("");
+        estudioEsculturaCheckBox.setActionCommand("");
+        estudioEsculturaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                estudioEsculturaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(estudioEsculturaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 270, 40));
+
+        talleresEscultaraCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        talleresEscultaraCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        talleresEscultaraCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        talleresEscultaraCheckBox.setText("TALLERES DE ESCULTURA");
+        talleresEscultaraCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                talleresEscultaraCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(talleresEscultaraCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 300, 40));
+
+        esculturaLineaChecklBox.setBackground(new java.awt.Color(17, 18, 17));
+        esculturaLineaChecklBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        esculturaLineaChecklBox.setForeground(new java.awt.Color(204, 204, 204));
+        esculturaLineaChecklBox.setText("ESCULTURA EN LINEA");
+        esculturaLineaChecklBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                esculturaLineaChecklBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(esculturaLineaChecklBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 240, 40));
+
+        clasesDibujoCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        clasesDibujoCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        clasesDibujoCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        clasesDibujoCheckBox.setText("CLASES DE DIBUJO");
+        clasesDibujoCheckBox.setBorder(null);
+        clasesDibujoCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clasesDibujoCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(clasesDibujoCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 220, 40));
+
+        grupoDibujoCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        grupoDibujoCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        grupoDibujoCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        grupoDibujoCheckBox.setText("GRUPO DE DIBUJO");
+        grupoDibujoCheckBox.setToolTipText("");
+        grupoDibujoCheckBox.setActionCommand("");
+        grupoDibujoCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                grupoDibujoCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(grupoDibujoCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 240, 40));
+
+        talleresDibujoCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        talleresDibujoCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        talleresDibujoCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        talleresDibujoCheckBox.setText("TALLERES DE DIBUJO");
+        talleresDibujoCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                talleresDibujoCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(talleresDibujoCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 260, 40));
+
+        lineaDibujoCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        lineaDibujoCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        lineaDibujoCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        lineaDibujoCheckBox.setText("DIBUJO EN LINEA");
+        lineaDibujoCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lineaDibujoCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(lineaDibujoCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 200, 40));
+
+        cursoPinturaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        cursoPinturaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        cursoPinturaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        cursoPinturaCheckBox.setText("CURSO DE PINTURA");
+        cursoPinturaCheckBox.setBorder(null);
+        cursoPinturaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cursoPinturaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cursoPinturaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 220, 40));
+
+        grupoPinturaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        grupoPinturaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        grupoPinturaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        grupoPinturaCheckBox.setText("GRUPO DE PINTURA");
+        grupoPinturaCheckBox.setToolTipText("");
+        grupoPinturaCheckBox.setActionCommand("");
+        grupoPinturaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                grupoPinturaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(grupoPinturaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 240, 40));
+
+        talleresPinturaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        talleresPinturaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        talleresPinturaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        talleresPinturaCheckBox.setText("TALLERES DE PINTURA");
+        talleresPinturaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                talleresPinturaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(talleresPinturaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 260, 40));
+
+        lineaPinturaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        lineaPinturaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        lineaPinturaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        lineaPinturaCheckBox.setText("PINTURA EN LINEA");
+        lineaPinturaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lineaPinturaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(lineaPinturaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 200, 40));
+
+        cantoCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        cantoCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        cantoCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        cantoCheckBox.setText("CANTO");
+        cantoCheckBox.setBorder(null);
+        cantoCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cantoCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cantoCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 180, 40));
+
+        danzaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        danzaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        danzaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        danzaCheckBox.setText("DANZA");
+        danzaCheckBox.setToolTipText("");
+        danzaCheckBox.setActionCommand("");
+        danzaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                danzaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(danzaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 170, 40));
+
+        produccionCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        produccionCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        produccionCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        produccionCheckBox.setText("PRODUCCION MUSICAL");
+        produccionCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                produccionCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(produccionCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 260, 40));
+
+        poesiaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        poesiaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        poesiaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        poesiaCheckBox.setText("POESIA");
+        poesiaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                poesiaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(poesiaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 200, 40));
+
+        escribirCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        escribirCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        escribirCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        escribirCheckBox.setText("ESCRIBIR");
+        escribirCheckBox.setBorder(null);
+        escribirCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                escribirCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(escribirCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 180, 40));
+
+        leerCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        leerCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        leerCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        leerCheckBox.setText("LEER");
+        leerCheckBox.setToolTipText("");
+        leerCheckBox.setActionCommand("");
+        leerCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                leerCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(leerCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 170, 40));
+
+        idiomaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        idiomaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        idiomaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        idiomaCheckBox.setText("IDIOMAS");
+        idiomaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idiomaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(idiomaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 180, 40));
+
+        matematicasCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        matematicasCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        matematicasCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        matematicasCheckBox.setText("MATEMATICAS");
+        matematicasCheckBox.setBorder(null);
+        matematicasCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                matematicasCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(matematicasCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 180, 40));
+
+        fisicaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        fisicaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        fisicaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        fisicaCheckBox.setText("FISICA");
+        fisicaCheckBox.setToolTipText("");
+        fisicaCheckBox.setActionCommand("");
+        fisicaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fisicaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(fisicaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 170, 40));
+
+        logicaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        logicaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        logicaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        logicaCheckBox.setText("LOGICA");
+        logicaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logicaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(logicaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 180, 40));
+
+        programacionCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        programacionCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        programacionCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        programacionCheckBox.setText("PROGRAMACION");
+        programacionCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                programacionCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(programacionCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 200, 40));
+
+        pinturaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        pinturaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        pinturaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        pinturaCheckBox.setText("PINTURA");
+        pinturaCheckBox.setBorder(null);
+        pinturaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pinturaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(pinturaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 180, 40));
+
+        esculturaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        esculturaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        esculturaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        esculturaCheckBox.setText("ESCULTURA");
+        esculturaCheckBox.setToolTipText("");
+        esculturaCheckBox.setActionCommand("");
+        esculturaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                esculturaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(esculturaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 170, 40));
+
+        dibujarCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        dibujarCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        dibujarCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        dibujarCheckBox.setText("DIBUJAR");
+        dibujarCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dibujarCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(dibujarCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 180, 40));
+
+        cineCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        cineCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        cineCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        cineCheckBox.setText("CINE");
+        cineCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cineCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cineCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 160, 40));
+
+        musicaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        musicaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        musicaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        musicaCheckBox.setText("MUSICA");
+        musicaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                musicaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(musicaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 160, 40));
+
+        arteCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        arteCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        arteCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        arteCheckBox.setText("ARTE");
+        arteCheckBox.setBorder(null);
+        arteCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                arteCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(arteCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 180, 40));
+
+        cienciaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        cienciaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        cienciaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        cienciaCheckBox.setText("CIENCIA");
+        cienciaCheckBox.setToolTipText("");
+        cienciaCheckBox.setActionCommand("");
+        cienciaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cienciaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cienciaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 170, 40));
+
+        literaturaCheckBox.setBackground(new java.awt.Color(17, 18, 17));
+        literaturaCheckBox.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        literaturaCheckBox.setForeground(new java.awt.Color(204, 204, 204));
+        literaturaCheckBox.setText("LITERATURA");
+        literaturaCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                literaturaCheckBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(literaturaCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 180, 40));
+
+        volverBoton.setBackground(new java.awt.Color(197, 0, 0));
+        volverBoton.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        volverBoton.setForeground(new java.awt.Color(255, 255, 255));
+        volverBoton.setText("<——");
+        volverBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverBotonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(volverBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 350, 70, 40));
+
+        avanzarBoton.setBackground(new java.awt.Color(3, 0, 173));
+        avanzarBoton.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        avanzarBoton.setForeground(new java.awt.Color(255, 255, 255));
+        avanzarBoton.setText("AVANZAR");
+        avanzarBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                avanzarBotonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(avanzarBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 350, 140, 40));
+
+        cositaArriba.setBackground(new java.awt.Color(17, 18, 17));
+        cositaArriba.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                cositaArribaMouseDragged(evt);
+            }
+        });
+        cositaArriba.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                cositaArribaMousePressed(evt);
+            }
+        });
+        cositaArriba.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(cositaArriba, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 70));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 480));
+
+        pack();
+    }// </editor-fold>                        
+
+    private void avanzarBotonActionPerformed(java.awt.event.ActionEvent evt) {                                             
+
+        if(contPantalla == 0 && arteCheckBox.isSelected()){
+           
+            cineCheckBox.setVisible(true);
+            dibujarCheckBox.setVisible(true);
+            esculturaCheckBox.setVisible(true);
+            pinturaCheckBox.setVisible(true);
+            contPantalla++;
+            eleccionCategoria = "arte";
+        }
+        else if(contPantalla == 0 && literaturaCheckBox.isSelected()){
+           
+            leerCheckBox.setVisible(true);
+            escribirCheckBox.setVisible(true);
+            idiomaCheckBox.setVisible(true);
+            poesiaCheckBox.setVisible(true);
+            contPantalla++;
+            eleccionCategoria = "literatura";
+        }else if(contPantalla == 0 && cienciaCheckBox.isSelected()){
+           
+            matematicasCheckBox.setVisible(true);
+            fisicaCheckBox.setVisible(true);
+            logicaCheckBox.setVisible(true);
+            programacionCheckBox.setVisible(true);
+            contPantalla++;
+            eleccionCategoria = "ciencia";
+        }else if(contPantalla == 0 && musicaCheckBox.isSelected()){
+            
+            poesiaCheckBox.setVisible(true);
+            produccionCheckBox.setVisible(true);
+            danzaCheckBox.setVisible(true);
+            cantoCheckBox.setVisible(true);
+            contPantalla++;
+            eleccionCategoria = "musica";
+        }else if(contPantalla == 1 && pinturaCheckBox.isSelected()){
+            mostrarCheckBoxesPintura();
+        }else if(contPantalla == 1 && esculturaCheckBox.isSelected()){
+            mostrarCheckBoxesEscultura();
+        }else if(contPantalla == 1 && dibujarCheckBox.isSelected()){
+            mostrarCheckBoxesDibujo();
+        }else if(contPantalla == 1 && cineCheckBox.isSelected()){
+            mostrarCheckBoxesCine();
+        }else if(contPantalla == 1 && escribirCheckBox.isSelected()){
+            mostrarCheckBoxesEscritura();
+        }else if(contPantalla == 1 && leerCheckBox.isSelected()){
+            mostrarCheckBoxesLectura();
+        }else if(contPantalla == 1 && poesiaCheckBox.isSelected()){
+            mostrarCheckBoxesPoesia();
+        }else if(contPantalla == 1 && idiomaCheckBox.isSelected()){
+            mostrarCheckBoxesIdiomas();
+        }else if(contPantalla == 1 && cantoCheckBox.isSelected()){
+            mostrarCheckBoxesCanto();
+        }else if(contPantalla == 1 && danzaCheckBox.isSelected()){
+            mostrarCheckBoxesBaile();
+        }else if(contPantalla == 1 && produccionCheckBox.isSelected()){
+            mostrarCheckBoxesProduccionMusical();
+        }else if(contPantalla == 1 && fisicaCheckBox.isSelected()){
+            mostrarCheckBoxesFisica();
+        }else if(contPantalla == 1 && logicaCheckBox.isSelected()){
+            mostrarCheckBoxesLogica();
+        }else if(contPantalla == 1 && programacionCheckBox.isSelected()){
+            mostrarCheckBoxesProgramacion();
+        }else if(contPantalla == 1 && matematicasCheckBox.isSelected()){
+            mostrarCheckBoxesMatematicas();
+        }
+        else if(contPantalla == 2 && cursoPinturaCheckBox.isSelected()){
+            titulo = "CURSO DE PINTURA";
+            cuerpo = "<html>Busca clases locales de pintura que se adapten a tus intereses y nivel de habilidad. Puedes encontrar cursos en academias de arte, "
+            + "centros comunitarios, estudios de artistas independientes o incluso en línea. Estos cursos suelen ofrecer una introducción a diferentes técnicas de pintura, "
+            + "como acrílico, óleo, acuarela o pintura al pastel, y proporcionan orientación y retroalimentación personalizada de instructores experimentados.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        }     else if(contPantalla == 2 && grupoPinturaCheckBox.isSelected()){
+            titulo = "GRUPO DE PINTURA";
+            cuerpo = "<html>Explora la posibilidad de unirte a un grupo de pintura local donde puedas reunirte regularmente con otros entusiastas del arte para pintar juntos, intercambiar ideas y compartir experiencias. Estos grupos pueden ofrecer sesiones de pintura en grupo, eventos de exhibición y oportunidades de colaboración en proyectos artísticos.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        }else if (contPantalla == 2 && talleresPinturaCheckBox.isSelected()) {
+            titulo = "TALLER DE PINTURA";
+            cuerpo = "<html>Muchas veces se organizan talleres de pintura intensivos de uno o dos días durante los fines de semana. Estos talleres suelen centrarse en temas específicos o técnicas particulares y son una excelente manera de sumergirse en el mundo de la pintura de manera concentrada y práctica.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && lineaPinturaCheckBox.isSelected()) {
+            titulo = "PINTURA EN LINEA";
+            cuerpo = "<html>Hay una gran cantidad de recursos en línea disponibles para aprender pintura, desde tutoriales en video hasta cursos completos. Plataformas como YouTube, Skillshare, Udemy o Coursera ofrecen una amplia gama de opciones para todos los niveles de habilidad y preferencias de aprendizaje. Estos recursos pueden ser especialmente útiles si prefieres aprender a tu propio ritmo o si no tienes acceso fácil a clases presenciales.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+
+        } else if(contPantalla == 2 && clasesDibujoCheckBox.isSelected()){
+            titulo = "CLASES DE DIBUJO";
+            cuerpo = "<html>Busca clases locales de dibujo que se adapten a tus intereses y nivel de habilidad. Puedes encontrar cursos en academias de arte, centros comunitarios o estudios de artistas independientes. Estos cursos suelen ofrecer una introducción a diferentes técnicas de dibujo, como dibujo a lápiz, carboncillo, tinta, pastel, entre otras. Los instructores experimentados pueden brindarte orientación personalizada y retroalimentación para ayudarte a mejorar tus habilidades.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        }  else if(contPantalla == 2 && grupoDibujoCheckBox.isSelected()){
+            titulo = "GRUPO DE DIBUJO";
+            cuerpo = "<html>Explora la posibilidad de unirte a un grupo de dibujo local donde puedas reunirte regularmente con otros entusiastas del dibujo para practicar juntos, intercambiar ideas y recibir retroalimentación constructiva. Estos grupos suelen organizar sesiones de dibujo en grupo, eventos de exhibición y oportunidades de colaboración en proyectos artísticos.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+
+        } else if(contPantalla == 2 && talleresDibujoCheckBox.isSelected()){
+            titulo = "TALLER DE DIBUJO";
+            cuerpo = "<html>Busca talleres de dibujo de fin de semana o de corta duración que se centren en temas específicos o técnicas particulares. Estos talleres suelen ser intensivos y prácticos, lo que te permite sumergirte en el mundo del dibujo de manera concentrada y aprender nuevas habilidades de forma rápida y efectiva.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        }   else if(contPantalla == 2 && lineaDibujoCheckBox.isSelected()){
+            titulo = "DIBUJO EN LINEA";
+            cuerpo = "<html>Hay una gran cantidad de recursos en línea disponibles para aprender dibujo, desde tutoriales en video hasta cursos completos. Plataformas como YouTube, Skillshare, Udemy o Coursera ofrecen una amplia gama de opciones para todos los niveles de habilidad y preferencias de aprendizaje. Estos recursos pueden ser especialmente útiles si prefieres aprender a tu propio ritmo o si no tienes acceso fácil a clases presenciales.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+
+        }  else if(contPantalla == 2 && clasesEsculturaCheckBox.isSelected()){
+            titulo = "CLASES DE ESCULTURA";
+            cuerpo = "<html>Busca clases locales de escultura que se adapten a tus intereses y nivel de habilidad. Puedes encontrar cursos en academias de arte, centros comunitarios, talleres de artistas locales o incluso en universidades o escuelas de arte. Estos cursos suelen ofrecer una introducción a diferentes técnicas de escultura, como modelado en arcilla, tallado en madera, escultura en piedra, fundición en metal, entre otras. Los instructores expertos pueden guiarte a través de los procesos creativos y proporcionarte retroalimentación para mejorar tus habilidades.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+
+        } else if(contPantalla == 2 && estudioEsculturaCheckBox.isSelected()){
+            titulo = "ESTUDIO DE ESCULTURA";
+            cuerpo = "<html>Si tienes la oportunidad, considera unirte a un estudio de escultura donde puedas trabajar en un entorno creativo compartido con otros artistas. Estos estudios suelen ofrecer acceso a herramientas, materiales y espacio de trabajo, así como la oportunidad de participar en exposiciones colectivas y eventos artísticos.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if(contPantalla == 2 && talleresEscultaraCheckBox.isSelected()){
+            titulo = "TALLERES DE ESCULTURA";
+            cuerpo = "<html>Busca talleres y seminarios de escultura que se lleven a cabo en tu área local o en otros lugares. Estos eventos suelen ser dirigidos por artistas profesionales y pueden centrarse en técnicas específicas, materiales o conceptos artísticos. Participar en talleres te brinda la oportunidad de aprender nuevas habilidades, explorar diferentes enfoques creativos y conocer a otros artistas con intereses similares.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if(contPantalla == 2 && esculturaLineaChecklBox.isSelected()){
+            titulo = "ESCULTURA EN LINEA";
+            cuerpo = "<html> Además de las clases presenciales y los talleres, también puedes encontrar una variedad de recursos en línea para aprender escultura. Plataformas como YouTube, Skillshare, Udemy o Coursera ofrecen tutoriales en video, cursos en línea y recursos educativos sobre escultura, que van desde conceptos básicos hasta técnicas avanzadas. Estos recursos son útiles para aprender a tu propio ritmo y desde la comodidad de tu hogar.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+
+        }  else if(contPantalla == 2 && cursosCineCheckBox.isSelected()){
+            titulo = "CURSOS DE CINE";
+            cuerpo = "<html>Inscríbete en cursos de cine: Busca cursos locales o en línea que enseñen los fundamentos del cine, como la teoría del cine, la producción cinematográfica, la edición de video, la dirección de fotografía, entre otros. Puedes encontrar cursos en academias de cine, universidades, plataformas educativas en línea y talleres especializados. Estos cursos suelen ofrecer una introducción a los conceptos básicos del cine y pueden ayudarte a desarrollar habilidades prácticas en la creación y producción de películas.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && clubCineCheckBox.isSelected()) {
+            titulo = "CLUB DE CINE";
+            cuerpo = "<html>Busca clubes de cine locales donde puedas reunirte con otros aficionados al cine para ver y discutir películas, participar en proyecciones y eventos especiales, y compartir tus opiniones e ideas sobre el mundo del cine. Los clubes de cine son una excelente manera de conectarte con otras personas apasionadas por el cine y ampliar tu conocimiento sobre diferentes géneros, estilos y períodos cinematográficos.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && festivalesCineCheckBox.isSelected()) {
+            titulo = "FESTIVAL DE CINE";
+            cuerpo = "<html>Explora la posibilidad de asistir a festivales de cine locales, regionales o internacionales, donde puedas ver una variedad de películas independientes, cortometrajes, documentales y obras de cineastas emergentes y establecidos. Los festivales de cine ofrecen una experiencia única para descubrir nuevas películas, interactuar con cineastas y profesionales de la industria, y sumergirte en la cultura cinematográfica.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && cineLineaCheckBox.isSelected()) {
+            titulo = "CINE EN LINEA";
+            cuerpo = "<html>Además de los cursos y eventos presenciales, también puedes encontrar una gran cantidad de recursos en línea para aprender sobre cine. Plataformas como YouTube, Vimeo, Filmmaker IQ y No Film School ofrecen tutoriales, análisis de películas, entrevistas con cineastas, consejos de producción y mucho más. Estos recursos son útiles para aprender sobre diferentes aspectos del cine, desde la narrativa y la cinematografía hasta la edición y los efectos visuales.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        }if (contPantalla == 2 && escrituraCreativaCheckBox.isSelected()) {
+            titulo = "ESCRITURA CREATIVA";
+            cuerpo = "<html>Busca cursos locales o en línea que enseñen los fundamentos de la escritura creativa, como técnicas de narrativa, desarrollo de personajes, creación de tramas, escritura de poesía, entre otros. Puedes encontrar cursos en universidades, centros comunitarios, academias de escritura en línea y talleres especializados. Estos cursos suelen ofrecer una introducción a los conceptos básicos de la escritura literaria y pueden ayudarte a desarrollar habilidades prácticas en la creación de historias y poemas.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && clubEscrituraCheckBox.isSelected()) {
+            titulo = "CLUB DE ESCRITURA";
+            cuerpo = "<html>Busca clubes de escritura locales donde puedas reunirte con otros entusiastas de la literatura para discutir libros, compartir escritos, participar en actividades creativas y recibir retroalimentación constructiva sobre tus trabajos. Los clubes de lectura y escritura son una excelente manera de conectarte con otras personas apasionadas por la literatura y ampliar tu conocimiento sobre diferentes géneros, estilos y autores.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && talleresEscrituraCheckBox.isSelected()) {
+            titulo = "TALLER DE ESCRITURA";
+            cuerpo = "<html>Explora la posibilidad de asistir a talleres de escritura, conferencias literarias, ferias del libro o eventos literarios locales, donde puedas aprender de escritores y poetas profesionales, participar en sesiones de lectura y escritura, y conocer a otros miembros de la comunidad literaria. Estos eventos ofrecen una oportunidad única para inspirarte, aprender nuevas técnicas y establecer conexiones con otros escritores y lectores.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && lineaEscrituraCheckBox.isSelected()) {
+            titulo = "ESCRITURA EN LINEA";
+            cuerpo = "<html>Además de los cursos y eventos presenciales, también puedes encontrar una amplia gama de recursos en línea para aprender sobre escritura literaria. Plataformas como Coursera, Udemy, MasterClass y Skillshare ofrecen cursos en línea impartidos por escritores profesionales y expertos en el campo de la literatura. Además, hay numerosos blogs, podcasts, foros y comunidades en línea dedicados a la escritura creativa que ofrecen consejos, recursos y oportunidades para interactuar con otros escritores.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        }if (contPantalla == 2 && maratonLecturaCheckBox.isSelected()) {
+            titulo = "MARATÓN DE LECTURA";
+            cuerpo = "<html>Dedica tiempo regularmente para leer durante un período prolongado, ya sea un par de horas en la tarde o un día entero los fines de semana. Puedes elegir un género específico, un autor en particular o simplemente sumergirte en una pila de libros que has estado deseando leer. Encuentra un lugar cómodo y acogedor, prepara tu bebida favorita y disfruta de una inmersión profunda en el mundo de la literatura.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && clubLecturaCheckBox.isSelected()) {
+            titulo = "CLUB DE LECTURA";
+            cuerpo = "<html>Únete a un club de lectura local o en línea donde puedas discutir libros con otros entusiastas de la lectura. Participar en un club de lectura te brinda la oportunidad de descubrir nuevas obras, intercambiar ideas y perspectivas sobre los libros, y conocer a personas con intereses literarios similares. Puedes elegir un club que se centre en un género específico, como la ficción contemporánea, la literatura clásica, la poesía, o uno que explore una variedad de géneros y estilos.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && filosofiaEscrituraCheckBox.isSelected()) {
+            titulo = "FILOSOFÍA";
+            cuerpo = "<html>Además de leer literatura en general, considera cómo la literatura puede ser una puerta de entrada a la filosofía. Muchas obras literarias exploran temas filosóficos profundos y provocan reflexiones sobre cuestiones existenciales, éticas, políticas y metafísicas. Al leer novelas, cuentos y ensayos que abordan estos temas, puedes desarrollar una comprensión más amplia de la filosofía y su relevancia en la vida cotidiana. Además, combinar la lectura de literatura con el estudio de la filosofía te permite profundizar tu comprensión de ambos campos y encontrar conexiones significativas entre ellos.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && desafiosLecturaCheckBox.isSelected()) {
+            titulo = "DESAFÍOS DE LECTURA";
+            cuerpo = "<html>Únete a desafíos de lectura como el reto de lectura anual Goodreads Reading Challenge o desafíos temáticos organizados por bibliotecas, librerías o comunidades en línea. Estos desafíos te motivan a establecer metas de lectura, explorar nuevos géneros y autores, y ampliar tus horizontes literarios. Además, pueden brindarte una sensación de logro al completar tus objetivos de lectura.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        }
+
+        if (contPantalla == 2 && antologiaPoesiaCheckBox.isSelected()) {
+            titulo = "ANTOLOGÍA DE POESÍA";
+            cuerpo = "<html>Dedica tiempo a explorar una amplia variedad de poesía, desde clásicos hasta poetas contemporáneos. Lee diferentes estilos, formas y temas de poesía y selecciona tus poemas favoritos para crear tu propia antología personal. Puedes organizar los poemas por temas, estilos o períodos literarios, y agregar tus propias reflexiones y comentarios sobre cada uno. Esta actividad te ayudará a profundizar tu comprensión de la poesía y a descubrir nuevas voces y perspectivas poéticas.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && escribirPoesiaCheckBox.isSelected()) {
+            titulo = "ESCRIBIR POESÍA";
+            cuerpo = "<html>Experimenta con la escritura de poesía y encuentra tu propia voz poética. No tengas miedo de expresarte libremente y explorar diferentes formas poéticas, como sonetos, haikus, versos libres o poemas narrativos. La poesía es una forma de arte personal y subjetiva, así que siéntete libre de expresar tus emociones, pensamientos y experiencias a través de tus propios poemas. Puedes mantener un diario de poesía donde escribas regularmente o participar en desafíos de escritura poética en línea para mantenerte inspirado y comprometido con tu práctica poética.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && eventosPoesiaCheckBox.isSelected()) {
+            titulo = "EVENTO DE POESÍA";
+            cuerpo = "<html>Busca eventos de poesía locales, como lecturas de poesía, recitales de micrófono abierto o talleres de poesía, donde puedas escuchar a poetas locales compartir sus obras, participar en discusiones sobre poesía y conectarte con otros amantes de la poesía. Estos eventos ofrecen una oportunidad única para experimentar la poesía en vivo, descubrir nuevos talentos poéticos y sumergirte en la comunidad poética local.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && lineaPoesiaCheckBox.isSelected()) {
+            titulo = "POESIA EN LINEA";
+            cuerpo = "<html>Además de participar en eventos de poesía en persona, también puedes encontrar una gran cantidad de recursos en línea para explorar la poesía. Plataformas como Poetry Foundation, Poets.org, Academy of American Poets y Poetry Society ofrecen una amplia selección de poemas, recursos educativos, entrevistas con poetas y consejos de escritura poética. Además, puedes unirte a comunidades en línea de poetas y lectores de poesía donde puedas compartir tus poemas, recibir retroalimentación y conectarte con otros amantes de la poesía.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        }
+
+        if (contPantalla == 2 && nuevoIdiomaCheckBox.isSelected()) {
+            titulo = "NUEVO IDIOMA";
+            cuerpo = "<html>Dedica tiempo a estudiar y aprender un idioma que te resulte interesante o útil. Puedes elegir un idioma que siempre hayas querido aprender o uno que te resulte relevante para tus intereses personales, profesionales o de viaje. Hay una variedad de recursos disponibles para aprender idiomas, como aplicaciones móviles (Duolingo, Babbel, Rosetta Stone), cursos en línea, libros de texto, clases presenciales o virtuales, y programas de intercambio lingüístico. Sumergirte en el estudio de un nuevo idioma no solo ampliará tus habilidades lingüísticas, sino que también te permitirá explorar nuevas culturas y conectar con personas de todo el mundo.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && literaturaIdiomaCheckBox.isSelected()) {
+            titulo = "LITERATURA EN OTROS IDIOMAS";
+            cuerpo = "<html>Amplía tu experiencia literaria explorando la literatura en otros idiomas. Lee libros, cuentos, poesía y obras de teatro en su idioma original o en traducción para descubrir nuevas voces literarias, perspectivas culturales y estilos de escritura. Puedes comenzar con autores clásicos o contemporáneos en el idioma que estés aprendiendo o explorar obras literarias de diferentes países y épocas para enriquecer tu comprensión del mundo a través de la literatura.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && intercambiosIdiomaCheckBox.isSelected()) {
+            titulo = "INTERCAMBIOS LINGÜÍSTICOS";
+            cuerpo = "<html>Únete a grupos de intercambio lingüístico donde puedas practicar tus habilidades lingüísticas con hablantes nativos del idioma que estás aprendiendo. Puedes encontrar grupos de intercambio en línea a través de plataformas como Meetup, Facebook o Reddit, o participar en eventos locales de intercambio de idiomas. Estas oportunidades te brindan la posibilidad de practicar la conversación en un ambiente relajado y amigable, mejorar tu fluidez y precisión en el idioma, y aprender más sobre la cultura y las costumbres de otros países.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && otrosIdiomaCheckBox.isSelected()) {
+            titulo = "MEDIOS EN OTROS IDIOMAS";
+            cuerpo = "<html>Exponerte a medios de comunicación en otros idiomas, como películas, series de televisión, música, podcasts, periódicos y revistas, es una excelente manera de mejorar tus habilidades lingüísticas y familiarizarte con la pronunciación, el vocabulario y la gramática del idioma. Puedes comenzar con contenido diseñado específicamente para estudiantes de idiomas, como películas con subtítulos en el idioma que estás aprendiendo, y luego pasar a contenido auténtico en el idioma objetivo a medida que adquieras más confianza y habilidad.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        }
+
+        if (contPantalla == 2 && clasesCantoCheckBox.isSelected()) {
+            titulo = "CLASES DE CANTO";
+            cuerpo = "<html>Inscríbete en clases de canto con un instructor calificado que pueda enseñarte técnicas vocales adecuadas, respiración, control del tono y proyección vocal. Las clases de canto te proporcionarán una base sólida para desarrollar tu voz y mejorar tus habilidades vocales. Puedes buscar clases locales en escuelas de música, estudios de canto o con profesores particulares, o explorar opciones en línea a través de plataformas educativas.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && karaokeCantoCheckBox.isSelected()) {
+            titulo = "KARAOKE";
+            cuerpo = "<html>Organiza noches de karaoke en casa con amigos o visita locales que ofrezcan sesiones de karaoke. Cantar tus canciones favoritas en un ambiente divertido y relajado es una excelente manera de disfrutar del canto sin presión y mejorar tus habilidades vocales.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && estilosCantoCheckBox.isSelected()) {
+            titulo = "DIFERENTES ESTILOS MUSICALES";
+            cuerpo = "<html>Amplía tu repertorio musical explorando una variedad de estilos musicales que te interesen, como pop, rock, jazz, música clásica, folk, entre otros. Cantar diferentes estilos te ayudará a desarrollar tu versatilidad vocal y a descubrir tu propia identidad como cantante. Puedes experimentar con diferentes canciones y géneros para encontrar aquellos que mejor se adapten a tu voz y estilo personal.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && actividadesCantoCheckBox.isSelected()) {
+            titulo = "ACTIVIDADES MUSICALES";
+            cuerpo = "<html>Únete a coros locales, grupos de música o participa en proyectos musicales comunitarios donde puedas cantar con otros músicos y compartir tu pasión por la música. Participar en actividades musicales te brinda la oportunidad de conectarte con otros cantantes y músicos, mejorar tus habilidades de interpretación y presentación en vivo, y experimentar la alegría de hacer música en conjunto.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        }
+
+        if (contPantalla == 2 && clasesBaileCheckBox.isSelected()) {
+            titulo = "CLASES DE BAILE";
+            cuerpo = "<html>Inscríbete en clases de baile en un estilo que te llame la atención, como ballet, jazz, hip-hop, salsa, bachata, tango, o cualquier otro estilo que te interese. Las clases de baile son una excelente manera de aprender técnicas de danza, mejorar tu coordinación y flexibilidad, y conectarte con otras personas que comparten tu pasión por el baile. Puedes buscar clases locales en estudios de danza, gimnasios, centros comunitarios o en línea.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && casaBaileCheckBox.isSelected()) {
+            titulo = "BAILA EN CASA";
+            cuerpo = "<html>Dedica tiempo a practicar baile en la comodidad de tu hogar. Puedes seguir tutoriales de baile en línea en plataformas como YouTube, donde encontrarás una gran variedad de videos de baile que van desde principiantes hasta avanzados en diferentes estilos de danza. Bailar en casa te brinda la libertad de experimentar, improvisar y expresarte a través del movimiento sin restricciones.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && eventosBaileCheckBox.isSelected()) {
+            titulo = "EVENTOS DE BAILE";
+            cuerpo = "<html>Busca eventos de baile locales, como clases grupales, noches de baile, milongas, fiestas de salsa, o eventos de danza comunitaria donde puedas bailar con otras personas y disfrutar de la música y el movimiento en un ambiente social y divertido. Estos eventos ofrecen una oportunidad para practicar tus habilidades de baile, conocer a otros bailarines y sumergirte en la vibrante comunidad de la danza.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && estilosBaileCheckBox.isSelected()) {
+            titulo = "DIFERENTES ESTILOS DE DANZA";
+            cuerpo = "<html>Si ya tienes experiencia en el baile amplíala explorando diferentes estilos y géneros de danza. Prueba estilos de danza que no hayas probado antes y experimenta con movimientos y ritmos nuevos. La danza es una forma de expresión artística versátil y diversa, así que no tengas miedo de explorar y descubrir lo que más te inspira y te motiva.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        }
+
+        if (contPantalla == 2 && softwareProduccionCheckBox.isSelected()) {
+            titulo = "SOFTWARE DE PRODUCCIÓN MUSICAL";
+            cuerpo = "<html>Dedica tiempo a aprender a utilizar software de producción musical como Ableton Live, Logic Pro, FL Studio, Pro Tools o GarageBand. Estos programas te permiten crear, editar y mezclar música digitalmente, y ofrecen una amplia gama de herramientas y efectos para experimentar con diferentes estilos y géneros musicales. Puedes encontrar tutoriales en línea, cursos en plataformas educativas y libros sobre producción musical para ayudarte a dominar el software y desarrollar tus habilidades de producción musical.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && instrumentosProduccionCheckBox.isSelected()) {
+            titulo = "INSTRUMENTOS MUSICALES";
+            cuerpo = "<html>Aprende a tocar instrumentos musicales como teclado, guitarra, bajo, batería, o cualquier otro instrumento que te interese. Tocar un instrumento te brinda una comprensión más profunda de la música y te permite crear tus propias pistas instrumentales para tus producciones musicales. Puedes encontrar lecciones en línea, tutoriales en video y libros de instrucción para aprender a tocar el instrumento de tu elección.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && composicionProduccionCheckBox.isSelected()) {
+            titulo = "COMPOSICIÓN MUSICAL";
+            cuerpo = "<html>Practica la composición musical escribiendo tus propias canciones, melodías y arreglos musicales. No tengas miedo de experimentar con diferentes estructuras, estilos y formas musicales, y deja volar tu creatividad mientras exploras nuevas ideas musicales. Puedes utilizar software de notación musical como Sibelius o Finale para escribir partituras, o simplemente grabar tus ideas musicales en un dispositivo de grabación o en tu software de producción musical.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && musicosProduccionCheckBox.isSelected()) {
+            titulo = "COLABORAR CON OTROS MÚSICOS";
+            cuerpo = "<html>Busca oportunidades para colaborar con otros músicos y productores musicales en proyectos creativos. Puedes unirte a comunidades en línea de productores musicales, participar en desafíos de producción musical, asistir a talleres y eventos de música, o simplemente conectarte con otros músicos locales en tu área. Colaborar con otros te brinda la oportunidad de compartir ideas, aprender de otros profesionales de la música y trabajar juntos para crear música increíble.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        }
+
+        if (contPantalla == 2 && experimentosFisicaCheckBox.isSelected()) {
+            titulo = "EXPERIMENTOS SIMPLES EN CASA";
+            cuerpo = "<html>Comienza con experimentos caseros simples que puedas hacer con objetos cotidianos para entender conceptos básicos de la física. Por ejemplo, puedes explorar la gravedad dejando caer diferentes objetos y observando cómo caen, o investigar la electricidad estática frotando un globo en tu cabello y observando cómo atrae pequeños objetos. Estos experimentos te ayudarán a comprender conceptos físicos fundamentales de manera práctica y divertida.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && librosFisicaCheckBox.isSelected()) {
+            titulo = "FISICA CON LIBROS";
+            cuerpo = "<html>Busca libros de divulgación científica diseñados para principiantes que introduzcan los conceptos básicos de la física de manera accesible y entretenida. Algunos libros recomendados para principiantes incluyen 'Una breve historia del tiempo' de Stephen Hawking, 'Física para todos' de Richard Feynman y 'El universo en una cáscara de nuez' de Stephen Hawking. Estos libros ofrecen una introducción amigable a temas como la mecánica, la termodinámica, la electricidad y el magnetismo.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && videosFisicaCheckBox.isSelected()) {
+            titulo = "FISICA EN VIDEO";
+            cuerpo = "<html>Explora videos educativos en plataformas como YouTube que explican conceptos físicos de manera visual y fácil de entender. Hay una gran cantidad de canales dedicados a la educación científica que ofrecen contenido de alta calidad sobre una variedad de temas de física. Algunos canales populares incluyen 'PBS Space Time', 'Veritasium', 'Physics Girl' y 'MinutePhysics'. Estos videos te ayudarán a visualizar conceptos abstractos y aclarar dudas que puedas tener sobre la física.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && lineaFisicaCheckBox.isSelected()) {
+            titulo = "CURSOS EN LÍNEA PARA PRINCIPIANTES";
+            cuerpo = "<html>Inscríbete en cursos en línea diseñados específicamente para principiantes en física. Plataformas educativas como Coursera, Khan Academy y Udemy ofrecen una variedad de cursos gratuitos y de pago que cubren temas desde la mecánica básica hasta la física cuántica. Estos cursos suelen estar diseñados con explicaciones paso a paso y ejercicios prácticos para ayudarte a comprender los conceptos de manera gradual y a tu propio ritmo.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        }
+
+        if (contPantalla == 2 && librosLogicaCheckBox.isSelected()) {
+            titulo = "LOGICA EN LIBROS";
+            cuerpo = "<html>Busca libros de introducción a la lógica simbólica que estén diseñados para principiantes y que ofrezcan una explicación clara y accesible de los conceptos fundamentales. Algunos libros recomendados para principiantes incluyen 'Introducción a la lógica' de Irving M. Copi y 'Lógica simbólica y argumentación' de Luis Vega Reñón. Estos libros te proporcionarán una base sólida para comenzar tu estudio de la lógica simbólica.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && lineaLogicaCheckBox.isSelected()) {
+            titulo = "LOGICA EN LINEA";
+            cuerpo = "<html>Explora cursos en línea gratuitos o de pago que cubran temas de lógica simbólica. Plataformas como Coursera, edX, Udemy y Khan Academy ofrecen una variedad de cursos introductorios a la lógica simbólica que están diseñados para principiantes y que te permiten aprender a tu propio ritmo desde la comodidad de tu hogar. Estos cursos suelen incluir videos educativos, ejercicios prácticos y evaluaciones para ayudarte a consolidar tu comprensión de los conceptos.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && conferenciasLogicaCheckBox.isSelected()) {
+            titulo = "CONFERENCIAS DE LOGICA";
+            cuerpo = "<html>Busca conferencias, charlas o talleres sobre lógica simbólica que se lleven a cabo en tu área local o en línea. Estos eventos pueden ser organizados por universidades, centros de educación continua o grupos de estudio de filosofía y lógica. Asistir a conferencias te brinda la oportunidad de escuchar a expertos en el campo, hacer preguntas y conectarte con otros entusiastas de la lógica simbólica.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && gruposLogicaCheckBox.isSelected()) {
+            titulo = "GRUPOS DE LOGICA";
+            cuerpo = "<html>Únete a grupos de estudio o clubes de lógica donde puedas discutir conceptos de lógica simbólica, resolver problemas juntos y compartir recursos y estrategias de aprendizaje. La interacción con otros estudiantes te brinda la oportunidad de aprender de diferentes perspectivas y de profundizar tu comprensión de la lógica simbólica a través del diálogo y la colaboración.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        }
+
+        if (contPantalla == 2 && librosProgramacionCheckBox.isSelected()) {
+            titulo = "PROGRAMACIÓN EN LIBROS";
+            cuerpo = "<html>Busca libros y recursos en línea diseñados para principiantes que cubran los conceptos básicos de la programación. Algunos libros recomendados incluyen 'Python Crash Course' de Eric Matthes, y 'Java: A Beginner's Guide' de Herbert Schildt. Estos recursos te proporcionarán una introducción sólida a la programación y te guiarán a través de los fundamentos de diferentes lenguajes de programación.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && lineaProgramacionCheckBox.isSelected()) {
+            titulo = "PROGRAMACIÓN EN LINEA";
+            cuerpo = "<html>Explora cursos en línea gratuitos o de pago en plataformas como Coursera, Udemy, Codecademy y freeCodeCamp. Estos cursos suelen ofrecer una variedad de opciones para principiantes, incluyendo cursos introductorios a la programación en diferentes lenguajes como Python, Java, JavaScript, HTML/CSS, entre otros. Los cursos suelen estar estructurados con lecciones en video, ejercicios prácticos y proyectos que te permiten aplicar lo que has aprendido.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && talleresProgramacionCheckBox.isSelected()) {
+            titulo = "TALLER DE PROGRAMACIÓN";
+            cuerpo = "<html>Busca eventos locales, como talleres de programación, hackathons, meetups de desarrolladores y conferencias de tecnología, donde puedas aprender de expertos en el campo y conectar con otros entusiastas de la programación. Estos eventos ofrecen una oportunidad para participar en actividades prácticas, hacer preguntas, compartir conocimientos y establecer contactos en la industria.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && comunidadesProgramacionCheckBox.isSelected()) {
+            titulo = "COMUNIDAD DE PROGRAMACIÓN";
+            cuerpo = "<html>Únete a comunidades en línea de programadores y estudiantes de programación donde puedas hacer preguntas, compartir recursos y colaborar en proyectos. Plataformas como Stack Overflow, GitHub, Reddit y Discord son excelentes lugares para conectarte con otros programadores, obtener ayuda con problemas de codificación y mantenerte al día con las últimas tendencias y tecnologías en el campo de la programación.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        }
+
+        if (contPantalla == 2 && librosMatematicasCheckBox.isSelected()) {
+            titulo = "MATEMÁTICAS EN LIBROS";
+            cuerpo = "<html>Busca libros y recursos en línea diseñados para principiantes que cubran los conceptos básicos de matemáticas. Algunos libros recomendados incluyen 'Matemáticas para dummies' de Mary Jane Sterling, 'Introducción a las matemáticas' de Gilbert Strang, 'El hombre que calculaba' de Malba Tahan y 'Introducción a la teoría de números' de Hardy y Wright. Estos recursos te proporcionarán una introducción sólida a los fundamentos de las matemáticas y te guiarán a través de los conceptos básicos.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && lineaMatematicasCheckBox.isSelected()) {
+            titulo = "MATEMÁTICAS EN LINEA";
+            cuerpo = "<html>Explora cursos en línea gratuitos o de pago en plataformas como Khan Academy, Coursera, edX y Udemy. Estas plataformas ofrecen una variedad de cursos introductorios a las matemáticas que abarcan desde aritmética básica hasta cálculo avanzado. Los cursos suelen estar estructurados con lecciones en video, ejercicios prácticos y evaluaciones para ayudarte a consolidar tu comprensión de los conceptos.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && clasesMatematicasCheckBox.isSelected()) {
+            titulo = "CLASES DE MATEMÁTICAS";
+            cuerpo = "<html>Busca clases locales de matemáticas en centros educativos, bibliotecas o centros comunitarios donde puedas recibir instrucción personalizada de un instructor calificado. También puedes considerar contratar a un tutor privado que pueda ayudarte a trabajar en áreas específicas en las que necesites ayuda. La tutoría individualizada te brinda la oportunidad de hacer preguntas, recibir retroalimentación personalizada y progresar a tu propio ritmo.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        } else if (contPantalla == 2 && gruposMatematicasCheckBox.isSelected()) {
+            titulo = "GRUPOS DE MATEMÁTICAS";
+            cuerpo = "<html>Únete a grupos de estudio o clubes de matemáticas donde puedas discutir conceptos, resolver problemas juntos y compartir recursos y estrategias de aprendizaje. La interacción con otros estudiantes te brinda la oportunidad de aprender de diferentes perspectivas y de profundizar tu comprensión de las matemáticas a través del diálogo y la colaboración.";
+            expAct.cambiarTexto(titulo, cuerpo);
+            expAct.setVisible(true);
+            expAct.setLocationRelativeTo(null);
+        }
+
+    }                                            
+
+    private void volverBotonActionPerformed(java.awt.event.ActionEvent evt) {                                            
+
+        if(contPantalla == 0){
+            deseleccionar();
+            dispose();
+        }else if (contPantalla >= 1){
+            deseleccionar();
+            volverMenuRecomendacion();
+            contPantalla = 0;
+        }
+
+    }                                           
+
+    private void literaturaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+
+        if (literaturaCheckBox.isSelected()) {
+            cienciaCheckBox.setSelected(false);
+            arteCheckBox.setSelected(false);
+            musicaCheckBox.setSelected(false);
+        }
+    }                                                  
+
+    private void cienciaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                
+
+        if (cienciaCheckBox.isSelected()) {
+            arteCheckBox.setSelected(false);
+            literaturaCheckBox.setSelected(false);
+            musicaCheckBox.setSelected(false);
+        }
+
+    }                                               
+
+    private void arteCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        if (arteCheckBox.isSelected()) {
+            cienciaCheckBox.setSelected(false);
+            literaturaCheckBox.setSelected(false);
+            musicaCheckBox.setSelected(false);
+        }
+    }                                            
+
+    private void musicaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        if (musicaCheckBox.isSelected()) {
+            cienciaCheckBox.setSelected(false);
+            arteCheckBox.setSelected(false);
+            literaturaCheckBox.setSelected(false);
+        }
+    }                                              
+
+    private void cineCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        if (cineCheckBox.isSelected()) {
+            dibujarCheckBox.setSelected(false);
+            esculturaCheckBox.setSelected(false);
+            pinturaCheckBox.setSelected(false);
+        }
+    }                                            
+
+    private void dibujarCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        if (dibujarCheckBox.isSelected()) {
+            cineCheckBox.setSelected(false);
+            esculturaCheckBox.setSelected(false);
+            pinturaCheckBox.setSelected(false);
+        }
+    }                                               
+
+    private void esculturaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        if (esculturaCheckBox.isSelected()) {
+            cineCheckBox.setSelected(false);
+            dibujarCheckBox.setSelected(false);
+            pinturaCheckBox.setSelected(false);
+        }
+    }                                                 
+
+    private void pinturaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        if (pinturaCheckBox.isSelected()) {
+            cineCheckBox.setSelected(false);
+            esculturaCheckBox.setSelected(false);
+            dibujarCheckBox.setSelected(false);
+        }
+
+    }                                               
+
+    private void programacionCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+        if ( programacionCheckBox.isSelected()) {
+            matematicasCheckBox.setSelected(false);
+            fisicaCheckBox.setSelected(false);
+            logicaCheckBox.setSelected(false);
+        }
+    }                                                    
+
+    private void logicaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        if ( logicaCheckBox.isSelected()) {
+            matematicasCheckBox.setSelected(false);
+            fisicaCheckBox.setSelected(false);
+            programacionCheckBox.setSelected(false);
+        }
+
+    }                                              
+
+    private void fisicaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                               
+
+        if ( fisicaCheckBox.isSelected()) {
+            matematicasCheckBox.setSelected(false);
+            logicaCheckBox.setSelected(false);
+            programacionCheckBox.setSelected(false);
+        }
+
+    }                                              
+
+    private void matematicasCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+
+        if ( matematicasCheckBox.isSelected()) {
+            fisicaCheckBox.setSelected(false);
+            logicaCheckBox.setSelected(false);
+            programacionCheckBox.setSelected(false);
+        }
+    }                                                   
+
+    private void idiomaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        if ( idiomaCheckBox.isSelected()) {
+            escribirCheckBox.setSelected(false);
+            leerCheckBox.setSelected(false);
+            poesiaCheckBox.setSelected(false);
+        }
+    }                                              
+
+    private void leerCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        if ( leerCheckBox.isSelected()) {
+            escribirCheckBox.setSelected(false);
+            idiomaCheckBox.setSelected(false);
+            poesiaCheckBox.setSelected(false);
+        }
+    }                                            
+
+    private void escribirCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+        if ( escribirCheckBox.isSelected()) {
+            leerCheckBox.setSelected(false);
+            idiomaCheckBox.setSelected(false);
+            poesiaCheckBox.setSelected(false);
+        }
+
+    }                                                
+
+    private void poesiaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        if ( poesiaCheckBox.isSelected()) {
+            escribirCheckBox.setSelected(false);
+            leerCheckBox.setSelected(false);
+            idiomaCheckBox.setSelected(false);
+        }
+    }                                              
+
+    private void produccionCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+        if ( produccionCheckBox.isSelected()) {
+            poesiaCheckBox.setSelected(false);
+            cantoCheckBox.setSelected(false);
+            danzaCheckBox.setSelected(false);
+        }
+    }                                                  
+
+    private void danzaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        if ( danzaCheckBox.isSelected()) {
+            poesiaCheckBox.setSelected(false);
+            cantoCheckBox.setSelected(false);
+            produccionCheckBox.setSelected(false);
+        }
+
+    }                                             
+
+    private void cantoCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        if ( cantoCheckBox.isSelected()) {
+            poesiaCheckBox.setSelected(false);
+            danzaCheckBox.setSelected(false);
+            produccionCheckBox.setSelected(false);
+        }
+    }                                             
+
+    private void lineaPinturaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+        if ( lineaPinturaCheckBox.isSelected()) {
+            cursoPinturaCheckBox.setSelected(false);
+            grupoPinturaCheckBox.setSelected(false);
+            talleresPinturaCheckBox.setSelected(false);
+        }
+
+    }                                                    
+
+    private void talleresPinturaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                        
+        if ( talleresPinturaCheckBox.isSelected()) {
+            cursoPinturaCheckBox.setSelected(false);
+            grupoPinturaCheckBox.setSelected(false);
+            lineaPinturaCheckBox.setSelected(false);
+        }
+
+    }                                                       
+
+    private void grupoPinturaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+        if ( grupoPinturaCheckBox.isSelected()) {
+            cursoPinturaCheckBox.setSelected(false);
+            talleresPinturaCheckBox.setSelected(false);
+            lineaPinturaCheckBox.setSelected(false);
+        }
+
+    }                                                    
+
+    private void cursoPinturaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+        if ( cursoPinturaCheckBox.isSelected()) {
+            grupoPinturaCheckBox.setSelected(false);
+            talleresPinturaCheckBox.setSelected(false);
+            lineaPinturaCheckBox.setSelected(false);
+        }
+
+    }                                                    
+
+    private void lineaDibujoCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+        if ( lineaDibujoCheckBox.isSelected()) {
+            grupoDibujoCheckBox.setSelected(false);
+            clasesDibujoCheckBox.setSelected(false);
+            talleresDibujoCheckBox.setSelected(false);
+        }
+    }                                                   
+
+    private void talleresDibujoCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                       
+        if ( talleresDibujoCheckBox.isSelected()) {
+            grupoDibujoCheckBox.setSelected(false);
+            clasesDibujoCheckBox.setSelected(false);
+            lineaDibujoCheckBox.setSelected(false);
+        }
+    }                                                      
+
+    private void grupoDibujoCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+        if ( grupoDibujoCheckBox.isSelected()) {
+            clasesDibujoCheckBox.setSelected(false);
+            talleresDibujoCheckBox.setSelected(false);
+            lineaDibujoCheckBox.setSelected(false);
+        }
+    }                                                   
+
+    private void clasesDibujoCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+        if ( clasesDibujoCheckBox.isSelected()) {
+            grupoDibujoCheckBox.setSelected(false);
+            talleresDibujoCheckBox.setSelected(false);
+            lineaDibujoCheckBox.setSelected(false);
+        }
+
+    }                                                    
+
+    private void esculturaLineaChecklBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                        
+        if (esculturaLineaChecklBox.isSelected()) {
+            clasesEsculturaCheckBox.setSelected(false);
+            estudioEsculturaCheckBox.setSelected(false);
+            talleresEscultaraCheckBox.setSelected(false);
+        }
+    }                                                       
+
+    private void talleresEscultaraCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                          
+        if (talleresEscultaraCheckBox.isSelected()) {
+            clasesEsculturaCheckBox.setSelected(false);
+            estudioEsculturaCheckBox.setSelected(false);
+            esculturaLineaChecklBox.setSelected(false);
+        }
+    }                                                         
+
+    private void estudioEsculturaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                         
+        if (estudioEsculturaCheckBox.isSelected()) {
+            clasesEsculturaCheckBox.setSelected(false);
+            talleresEscultaraCheckBox.setSelected(false);
+            esculturaLineaChecklBox.setSelected(false);
+        }
+    }                                                        
+
+    private void clasesEsculturaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                        
+        if (clasesEsculturaCheckBox.isSelected()) {
+            estudioEsculturaCheckBox.setSelected(false);
+            talleresEscultaraCheckBox.setSelected(false);
+            esculturaLineaChecklBox.setSelected(false);
+
+        }
+    }                                                       
+
+    private void cineLineaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        if (cineLineaCheckBox.isSelected()) {
+            cursosCineCheckBox.setSelected(false);
+            clubCineCheckBox.setSelected(false);
+            festivalesCineCheckBox.setSelected(false);
+        }
+    }                                                 
+
+    private void festivalesCineCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                       
+        if (festivalesCineCheckBox.isSelected()) {
+            cursosCineCheckBox.setSelected(false);
+            clubCineCheckBox.setSelected(false);
+            cineLineaCheckBox.setSelected(false);
+        }
+    }                                                      
+
+    private void clubCineCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+        if (clubCineCheckBox.isSelected()) {
+            cursosCineCheckBox.setSelected(false);
+            festivalesCineCheckBox.setSelected(false);
+            cineLineaCheckBox.setSelected(false);
+        }
+    }                                                
+
+    private void cursosCineCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+        if (cursosCineCheckBox.isSelected()) {
+            clubCineCheckBox.setSelected(false);
+            festivalesCineCheckBox.setSelected(false);
+            cineLineaCheckBox.setSelected(false);
+        }
+    }                                                  
+
+    private void lineaEscrituraCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                       
+        if (lineaEscrituraCheckBox.isSelected()) {
+            escrituraCreativaCheckBox.setSelected(false);
+            clubEscrituraCheckBox.setSelected(false);
+            talleresEscrituraCheckBox.setSelected(false);
+        }
+    }                                                      
+
+    private void talleresEscrituraCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                          
+        if (talleresEscrituraCheckBox.isSelected()) {
+            escrituraCreativaCheckBox.setSelected(false);
+            clubEscrituraCheckBox.setSelected(false);
+            lineaEscrituraCheckBox.setSelected(false);
+        }
+    }                                                         
+
+    private void clubEscrituraCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                      
+        if (clubEscrituraCheckBox.isSelected()) {
+            escrituraCreativaCheckBox.setSelected(false);
+            talleresEscrituraCheckBox.setSelected(false);
+            lineaEscrituraCheckBox.setSelected(false);
+        }
+    }                                                     
+
+    private void escrituraCreativaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                          
+        if (escrituraCreativaCheckBox.isSelected()) {
+            clubEscrituraCheckBox.setSelected(false);
+            talleresEscrituraCheckBox.setSelected(false);
+            lineaEscrituraCheckBox.setSelected(false);
+        }
+    }                                                         
+
+    private void maratonLecturaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                       
+        if (maratonLecturaCheckBox.isSelected()) {
+            desafiosLecturaCheckBox.setSelected(false);
+            clubLecturaCheckBox.setSelected(false);
+            filosofiaEscrituraCheckBox.setSelected(false);
+        }
+    }                                                      
+
+    private void filosofiaEscrituraCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                           
+        if (filosofiaEscrituraCheckBox.isSelected()) {
+            desafiosLecturaCheckBox.setSelected(false);
+            clubLecturaCheckBox.setSelected(false);
+            maratonLecturaCheckBox.setSelected(false);
+        }
+    }                                                          
+
+    private void clubLecturaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+        if (clubLecturaCheckBox.isSelected()) {
+            desafiosLecturaCheckBox.setSelected(false);
+            filosofiaEscrituraCheckBox.setSelected(false);
+            maratonLecturaCheckBox.setSelected(false);
+        }
+    }                                                   
+
+    private void desafiosLecturaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                        
+        if (desafiosLecturaCheckBox.isSelected()) {
+            clubLecturaCheckBox.setSelected(false);
+            filosofiaEscrituraCheckBox.setSelected(false);
+            maratonLecturaCheckBox.setSelected(false);
+        }
+    }                                                       
+
+    private void lineaPoesiaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+        if (lineaPoesiaCheckBox.isSelected()) {
+            antologiaPoesiaCheckBox.setSelected(false);
+            escribirPoesiaCheckBox.setSelected(false);
+            eventosPoesiaCheckBox.setSelected(false);
+        }
+    }                                                   
+
+    private void eventosPoesiaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                      
+        if (eventosPoesiaCheckBox.isSelected()) {
+            antologiaPoesiaCheckBox.setSelected(false);
+            escribirPoesiaCheckBox.setSelected(false);
+            lineaPoesiaCheckBox.setSelected(false);
+        }
+    }                                                     
+
+    private void escribirPoesiaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                       
+        if (escribirPoesiaCheckBox.isSelected()) {
+            antologiaPoesiaCheckBox.setSelected(false);
+            eventosPoesiaCheckBox.setSelected(false);
+            lineaPoesiaCheckBox.setSelected(false);
+        }
+    }                                                      
+
+    private void antologiaPoesiaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                        
+        if (antologiaPoesiaCheckBox.isSelected()) {
+            escribirPoesiaCheckBox.setSelected(false);
+            eventosPoesiaCheckBox.setSelected(false);
+            lineaPoesiaCheckBox.setSelected(false);
+        }
+    }                                                       
+
+    private void otrosIdiomaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+        if (otrosIdiomaCheckBox.isSelected()) {
+            nuevoIdiomaCheckBox.setSelected(false);
+            literaturaIdiomaCheckBox.setSelected(false);
+            intercambiosIdiomaCheckBox.setSelected(false);
+        }
+    }                                                   
+
+    private void intercambiosIdiomaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                           
+        if (intercambiosIdiomaCheckBox.isSelected()) {
+            nuevoIdiomaCheckBox.setSelected(false);
+            literaturaIdiomaCheckBox.setSelected(false);
+            otrosIdiomaCheckBox.setSelected(false);
+        }
+    }                                                          
+
+    private void literaturaIdiomaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                         
+        if (literaturaIdiomaCheckBox.isSelected()) {
+            nuevoIdiomaCheckBox.setSelected(false);
+            intercambiosIdiomaCheckBox.setSelected(false);
+            otrosIdiomaCheckBox.setSelected(false);
+        }
+    }                                                        
+
+    private void nuevoIdiomaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+        if (nuevoIdiomaCheckBox.isSelected()) {
+            literaturaIdiomaCheckBox.setSelected(false);
+            intercambiosIdiomaCheckBox.setSelected(false);
+            otrosIdiomaCheckBox.setSelected(false);
+        }
+    }                                                   
+
+    private void actividadesCantoCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                         
+        if (actividadesCantoCheckBox.isSelected()) {
+            clasesCantoCheckBox.setSelected(false);
+            karaokeCantoCheckBox.setSelected(false);
+            estilosCantoCheckBox.setSelected(false);
+        }
+    }                                                        
+
+    private void estilosCantoCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+        if (estilosCantoCheckBox.isSelected()) {
+            clasesCantoCheckBox.setSelected(false);
+            karaokeCantoCheckBox.setSelected(false);
+            actividadesCantoCheckBox.setSelected(false);
+        }
+    }                                                    
+
+    private void karaokeCantoCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+        if (karaokeCantoCheckBox.isSelected()) {
+            clasesCantoCheckBox.setSelected(false);
+            estilosCantoCheckBox.setSelected(false);
+            actividadesCantoCheckBox.setSelected(false);
+        }
+    }                                                    
+
+    private void clasesCantoCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+        if (clasesCantoCheckBox.isSelected()) {
+            karaokeCantoCheckBox.setSelected(false);
+            estilosCantoCheckBox.setSelected(false);
+            actividadesCantoCheckBox.setSelected(false);
+        }
+    }                                                   
+
+    private void estilosBaileCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+        if (estilosBaileCheckBox.isSelected()) {
+            clasesBaileCheckBox.setSelected(false);
+            casaBaileCheckBox.setSelected(false);
+            eventosBaileCheckBox.setSelected(false);
+        }
+    }                                                    
+
+    private void eventosBaileCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+        if (eventosBaileCheckBox.isSelected()) {
+            clasesBaileCheckBox.setSelected(false);
+            casaBaileCheckBox.setSelected(false);
+            estilosBaileCheckBox.setSelected(false);
+        }
+    }                                                    
+
+    private void casaBaileCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        if (casaBaileCheckBox.isSelected()) {
+            clasesBaileCheckBox.setSelected(false);
+            eventosBaileCheckBox.setSelected(false);
+            estilosBaileCheckBox.setSelected(false);
+        }
+    }                                                 
+
+    private void clasesBaileCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+        if (clasesBaileCheckBox.isSelected()) {
+            casaBaileCheckBox.setSelected(false);
+            eventosBaileCheckBox.setSelected(false);
+            estilosBaileCheckBox.setSelected(false);
+        }
+    }                                                   
+
+    private void musicosProduccionCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                          
+        if (musicosProduccionCheckBox.isSelected()) {
+            softwareProduccionCheckBox.setSelected(false);
+            instrumentosProduccionCheckBox.setSelected(false);
+            composicionProduccionCheckBox.setSelected(false);
+        }
+    }                                                         
+
+    private void composicionProduccionCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                              
+        if (composicionProduccionCheckBox.isSelected()) {
+            softwareProduccionCheckBox.setSelected(false);
+            instrumentosProduccionCheckBox.setSelected(false);
+            musicosProduccionCheckBox.setSelected(false);
+        }
+    }                                                             
+
+    private void instrumentosProduccionCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                               
+        if (instrumentosProduccionCheckBox.isSelected()) {
+            softwareProduccionCheckBox.setSelected(false);
+            composicionProduccionCheckBox.setSelected(false);
+            musicosProduccionCheckBox.setSelected(false);
+        }
+    }                                                              
+
+    private void softwareProduccionCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                           
+        if (softwareProduccionCheckBox.isSelected()) {
+            instrumentosProduccionCheckBox.setSelected(false);
+            composicionProduccionCheckBox.setSelected(false);
+            musicosProduccionCheckBox.setSelected(false);
+        }
+    }                                                          
+
+    private void lineaFisicaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+        if ( lineaFisicaCheckBox.isSelected()) {
+            experimentosFisicaCheckBox.setSelected(false);
+            librosFisicaCheckBox.setSelected(false);
+            videosFisicaCheckBox.setSelected(false);
+        }
+    }                                                   
+
+    private void videosFisicaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+        if ( videosFisicaCheckBox.isSelected()) {
+            experimentosFisicaCheckBox.setSelected(false);
+            librosFisicaCheckBox.setSelected(false);
+            lineaFisicaCheckBox.setSelected(false);
+        }
+    }                                                    
+
+    private void librosFisicaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+        if ( librosFisicaCheckBox.isSelected()) {
+            experimentosFisicaCheckBox.setSelected(false);
+            videosFisicaCheckBox.setSelected(false);
+            lineaFisicaCheckBox.setSelected(false);
+        }
+    }                                                    
+
+    private void experimentosFisicaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                           
+        if ( experimentosFisicaCheckBox.isSelected()) {
+            librosFisicaCheckBox.setSelected(false);
+            videosFisicaCheckBox.setSelected(false);
+            lineaFisicaCheckBox.setSelected(false);
+        }
+    }                                                          
+
+    private void gruposLogicaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+        if (gruposLogicaCheckBox.isSelected()) {
+            librosLogicaCheckBox.setSelected(false);
+            lineaLogicaCheckBox.setSelected(false);
+            conferenciasLogicaCheckBox.setSelected(false);
+        }
+    }                                                    
+
+    private void conferenciasLogicaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                           
+        if (conferenciasLogicaCheckBox.isSelected()) {
+            librosLogicaCheckBox.setSelected(false);
+            lineaLogicaCheckBox.setSelected(false);
+            gruposLogicaCheckBox.setSelected(false);
+        }
+    }                                                          
+
+    private void lineaLogicaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+        if (lineaLogicaCheckBox.isSelected()) {
+            librosLogicaCheckBox.setSelected(false);
+            conferenciasLogicaCheckBox.setSelected(false);
+            gruposLogicaCheckBox.setSelected(false);
+        }
+    }                                                   
+
+    private void librosLogicaCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+        if (librosLogicaCheckBox.isSelected()) {
+            lineaLogicaCheckBox.setSelected(false);
+            conferenciasLogicaCheckBox.setSelected(false);
+            gruposLogicaCheckBox.setSelected(false);
+        }
+    }                                                    
+
+    private void comunidadesProgramacionCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                                
+        if (comunidadesProgramacionCheckBox.isSelected()) {
+            librosProgramacionCheckBox.setSelected(false);
+            lineaProgramacionCheckBox.setSelected(false);
+            talleresProgramacionCheckBox.setSelected(false);
+        }
+    }                                                               
+
+    private void talleresProgramacionCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                             
+        if (talleresProgramacionCheckBox.isSelected()) {
+            librosProgramacionCheckBox.setSelected(false);
+            lineaProgramacionCheckBox.setSelected(false);
+            comunidadesProgramacionCheckBox.setSelected(false);
+        }
+    }                                                            
+
+    private void lineaProgramacionCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                          
+        if (lineaProgramacionCheckBox.isSelected()) {
+            librosProgramacionCheckBox.setSelected(false);
+            talleresProgramacionCheckBox.setSelected(false);
+            comunidadesProgramacionCheckBox.setSelected(false);
+        }
+    }                                                         
+
+    private void librosProgramacionCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                           
+        if (librosProgramacionCheckBox.isSelected()) {
+            lineaProgramacionCheckBox.setSelected(false);
+            talleresProgramacionCheckBox.setSelected(false);
+            comunidadesProgramacionCheckBox.setSelected(false);
+        }
+    }                                                          
+
+    private void gruposMatematicasCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                          
+        if (gruposMatematicasCheckBox.isSelected()) {
+            librosMatematicasCheckBox.setSelected(false);
+            lineaMatematicasCheckBox.setSelected(false);
+            clasesMatematicasCheckBox.setSelected(false);
+        }
+    }                                                         
+
+    private void clasesMatematicasCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                          
+        if (clasesMatematicasCheckBox.isSelected()) {
+            librosMatematicasCheckBox.setSelected(false);
+            lineaMatematicasCheckBox.setSelected(false);
+            gruposMatematicasCheckBox.setSelected(false);
+        }
+    }                                                         
+
+    private void lineaMatematicasCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                         
+        if (lineaMatematicasCheckBox.isSelected()) {
+            librosMatematicasCheckBox.setSelected(false);
+            clasesMatematicasCheckBox.setSelected(false);
+            gruposMatematicasCheckBox.setSelected(false);
+        }
+    }                                                        
+
+    private void librosMatematicasCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                          
+        if (librosMatematicasCheckBox.isSelected()) {
+            lineaMatematicasCheckBox.setSelected(false);
+            clasesMatematicasCheckBox.setSelected(false);
+            gruposMatematicasCheckBox.setSelected(false);
+        }
+    }                                                         
+
+    private void cositaArribaMousePressed(java.awt.event.MouseEvent evt) {                                          
+         xMouse = evt.getX();
+        yMouse = evt.getY(); 
+         
+    }                                         
+
+    private void cositaArribaMouseDragged(java.awt.event.MouseEvent evt) {                                          
+         int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }                                         
+public void volverMenuRecomendacion(){
+    devolverColorBoton();
+        
+      
+        leerCheckBox.setVisible(false);
+        escribirCheckBox.setVisible(false);
+        idiomaCheckBox.setVisible(false);
+        poesiaCheckBox.setVisible(false);
+        cineCheckBox.setVisible(false);
+        dibujarCheckBox.setVisible(false);
+        esculturaCheckBox.setVisible(false);
+        pinturaCheckBox.setVisible(false);
+        matematicasCheckBox.setVisible(false);
+        fisicaCheckBox.setVisible(false);
+        logicaCheckBox.setVisible(false);
+        programacionCheckBox.setVisible(false);
+        produccionCheckBox.setVisible(false);
+        danzaCheckBox.setVisible(false);
+        cantoCheckBox.setVisible(false);
+        cursoPinturaCheckBox.setVisible(false);
+grupoPinturaCheckBox.setVisible(false);
+talleresPinturaCheckBox.setVisible(false);
+lineaPinturaCheckBox.setVisible(false);
+clasesDibujoCheckBox.setVisible(false);
+grupoDibujoCheckBox.setVisible(false);
+talleresDibujoCheckBox.setVisible(false);
+lineaDibujoCheckBox.setVisible(false);
+clasesEsculturaCheckBox.setVisible(false);
+estudioEsculturaCheckBox.setVisible(false);
+talleresEscultaraCheckBox.setVisible(false);
+esculturaLineaChecklBox.setVisible(false);
+cursosCineCheckBox.setVisible(false);
+clubCineCheckBox.setVisible(false);
+festivalesCineCheckBox.setVisible(false);
+cineLineaCheckBox.setVisible(false);
+escrituraCreativaCheckBox.setVisible(false);
+clubEscrituraCheckBox.setVisible(false);
+talleresEscrituraCheckBox.setVisible(false);
+lineaEscrituraCheckBox.setVisible(false);
+desafiosLecturaCheckBox.setVisible(false);
+clubLecturaCheckBox.setVisible(false);
+filosofiaEscrituraCheckBox.setVisible(false);
+maratonLecturaCheckBox.setVisible(false);
+antologiaPoesiaCheckBox.setVisible(false);
+escribirPoesiaCheckBox.setVisible(false);
+eventosPoesiaCheckBox.setVisible(false);
+lineaPoesiaCheckBox.setVisible(false);
+nuevoIdiomaCheckBox.setVisible(false);
+literaturaIdiomaCheckBox.setVisible(false);
+intercambiosIdiomaCheckBox.setVisible(false);
+otrosIdiomaCheckBox.setVisible(false);
+clasesCantoCheckBox.setVisible(false);
+karaokeCantoCheckBox.setVisible(false);
+estilosCantoCheckBox.setVisible(false);
+actividadesCantoCheckBox.setVisible(false);
+clasesBaileCheckBox.setVisible(false);
+casaBaileCheckBox.setVisible(false);
+eventosBaileCheckBox.setVisible(false);
+estilosBaileCheckBox.setVisible(false);
+softwareProduccionCheckBox.setVisible(false);
+instrumentosProduccionCheckBox.setVisible(false);
+composicionProduccionCheckBox.setVisible(false);
+musicosProduccionCheckBox.setVisible(false);
+experimentosFisicaCheckBox.setVisible(false);
+librosFisicaCheckBox.setVisible(false);
+videosFisicaCheckBox.setVisible(false);
+lineaFisicaCheckBox.setVisible(false);
+librosLogicaCheckBox.setVisible(false);
+lineaLogicaCheckBox.setVisible(false);
+conferenciasLogicaCheckBox.setVisible(false);
+gruposLogicaCheckBox.setVisible(false);
+librosProgramacionCheckBox.setVisible(false);
+lineaProgramacionCheckBox.setVisible(false);
+talleresProgramacionCheckBox.setVisible(false);
+comunidadesProgramacionCheckBox.setVisible(false);
+librosMatematicasCheckBox.setVisible(false);
+lineaMatematicasCheckBox.setVisible(false);
+clasesMatematicasCheckBox.setVisible(false);
+gruposMatematicasCheckBox.setVisible(false);
+}
+
+private void mostrarCheckBoxesPintura() {
+    cursoPinturaCheckBox.setVisible(true);
+    grupoPinturaCheckBox.setVisible(true);
+    talleresPinturaCheckBox.setVisible(true);
+    lineaPinturaCheckBox.setVisible(true);
+     cambiarColorBoton();
+    contPantalla++;
+}
+
+private void mostrarCheckBoxesDibujo() {
+    clasesDibujoCheckBox.setVisible(true);
+    grupoDibujoCheckBox.setVisible(true);
+    talleresDibujoCheckBox.setVisible(true);
+    lineaDibujoCheckBox.setVisible(true);
+        cambiarColorBoton();
+
+    contPantalla++;
+}
+
+private void mostrarCheckBoxesEscultura() {
+    clasesEsculturaCheckBox.setVisible(true);
+    estudioEsculturaCheckBox.setVisible(true);
+    talleresEscultaraCheckBox.setVisible(true);
+    esculturaLineaChecklBox.setVisible(true);   
+    cambiarColorBoton();
+    contPantalla++;
+}
+
+
+private void mostrarCheckBoxesCine() {
+    cursosCineCheckBox.setVisible(true);
+    clubCineCheckBox.setVisible(true);
+    festivalesCineCheckBox.setVisible(true);
+    cineLineaCheckBox.setVisible(true);
+         cambiarColorBoton();
+    contPantalla++;
+}
+
+// Función para mostrar checkboxes de escritura
+private void mostrarCheckBoxesEscritura() {
+    escrituraCreativaCheckBox.setVisible(true);
+    clubEscrituraCheckBox.setVisible(true);
+    talleresEscrituraCheckBox.setVisible(true);
+    lineaEscrituraCheckBox.setVisible(true);
+            cambiarColorBoton();
+    contPantalla++;
+}
+
+// Función para mostrar checkboxes de lectura
+private void mostrarCheckBoxesLectura() {
+    desafiosLecturaCheckBox.setVisible(true);
+    clubLecturaCheckBox.setVisible(true);
+    filosofiaEscrituraCheckBox.setVisible(true);
+    maratonLecturaCheckBox.setVisible(true);
+    contPantalla++;
+            cambiarColorBoton();
+
+}
+
+// Función para mostrar checkboxes de poesía
+private void mostrarCheckBoxesPoesia() {
+    antologiaPoesiaCheckBox.setVisible(true);
+    escribirPoesiaCheckBox.setVisible(true);
+    eventosPoesiaCheckBox.setVisible(true);
+    lineaPoesiaCheckBox.setVisible(true);
+    contPantalla++;
+            cambiarColorBoton();
+
+}
+
+// Función para mostrar checkboxes de idiomas
+private void mostrarCheckBoxesIdiomas() {
+    nuevoIdiomaCheckBox.setVisible(true);
+    literaturaIdiomaCheckBox.setVisible(true);
+    intercambiosIdiomaCheckBox.setVisible(true);
+    otrosIdiomaCheckBox.setVisible(true);
+    contPantalla++;     
+    cambiarColorBoton();
+
+}
+
+// Función para mostrar checkboxes de canto
+private void mostrarCheckBoxesCanto() {
+    clasesCantoCheckBox.setVisible(true);
+    karaokeCantoCheckBox.setVisible(true);
+    estilosCantoCheckBox.setVisible(true);
+    actividadesCantoCheckBox.setVisible(true);
+    contPantalla++;
+            cambiarColorBoton();
+
+}
+
+// Función para mostrar checkboxes de baile
+private void mostrarCheckBoxesBaile() {
+    clasesBaileCheckBox.setVisible(true);
+    casaBaileCheckBox.setVisible(true);
+    eventosBaileCheckBox.setVisible(true);
+    estilosBaileCheckBox.setVisible(true);
+    contPantalla++;
+            cambiarColorBoton();
+
+}
+
+// Función para mostrar checkboxes de producción musical
+private void mostrarCheckBoxesProduccionMusical() {
+    softwareProduccionCheckBox.setVisible(true);
+    instrumentosProduccionCheckBox.setVisible(true);
+    composicionProduccionCheckBox.setVisible(true);
+    musicosProduccionCheckBox.setVisible(true);
+    contPantalla++;
+            cambiarColorBoton();
+
+}
+
+// Función para mostrar checkboxes de física
+private void mostrarCheckBoxesFisica() {
+    experimentosFisicaCheckBox.setVisible(true);
+    librosFisicaCheckBox.setVisible(true);
+    videosFisicaCheckBox.setVisible(true);
+    lineaFisicaCheckBox.setVisible(true);
+    contPantalla++;
+           cambiarColorBoton();
+
+}
+
+// Función para mostrar checkboxes de lógica
+private void mostrarCheckBoxesLogica() {
+    librosLogicaCheckBox.setVisible(true);
+    lineaLogicaCheckBox.setVisible(true);
+    conferenciasLogicaCheckBox.setVisible(true);
+    gruposLogicaCheckBox.setVisible(true);
+    contPantalla++;
+            cambiarColorBoton();
+
+}
+
+// Función para mostrar checkboxes de programación
+private void mostrarCheckBoxesProgramacion() {
+    librosProgramacionCheckBox.setVisible(true);
+    lineaProgramacionCheckBox.setVisible(true);
+    talleresProgramacionCheckBox.setVisible(true);
+    comunidadesProgramacionCheckBox.setVisible(true);
+    contPantalla++;
+            cambiarColorBoton();
+
+}
+
+// Función para mostrar checkboxes de matemáticas
+private void mostrarCheckBoxesMatematicas() {
+    librosMatematicasCheckBox.setVisible(true);
+    lineaMatematicasCheckBox.setVisible(true);
+    clasesMatematicasCheckBox.setVisible(true);
+    gruposMatematicasCheckBox.setVisible(true);
+    contPantalla++;
+            cambiarColorBoton();
+
+} 
+
+public void cambiarColorBoton(){
+    
+            avanzarBoton.setBackground(new Color(0,4,255));
+            avanzarBoton.setText("ESCOGER");
+        
+}
+
+public void devolverColorBoton(){
+    
+            avanzarBoton.setBackground(new Color(24,0,55));
+            avanzarBoton.setText("AVANZAR");
+        
+}
+
+    /**
+     *
+     */
+public static void cerrarRecomiendamePantalla(JFrame instancia) {
+        instancia.dispose(); 
+    }
+
+
+
+
+
+private void deseleccionar(){
+     musicaCheckBox.setSelected(false);
+            cienciaCheckBox.setSelected(false);
+            arteCheckBox.setSelected(false);
+            literaturaCheckBox.setSelected(false); 
+            leerCheckBox.setSelected(false);
+escribirCheckBox.setSelected(false);
+idiomaCheckBox.setSelected(false);
+poesiaCheckBox.setSelected(false);
+cineCheckBox.setSelected(false);
+dibujarCheckBox.setSelected(false);
+esculturaCheckBox.setSelected(false);
+pinturaCheckBox.setSelected(false);
+matematicasCheckBox.setSelected(false);
+fisicaCheckBox.setSelected(false);
+logicaCheckBox.setSelected(false);
+programacionCheckBox.setSelected(false);
+produccionCheckBox.setSelected(false);
+danzaCheckBox.setSelected(false);
+cantoCheckBox.setSelected(false);
+    cursoPinturaCheckBox.setSelected(false);
+grupoPinturaCheckBox.setSelected(false);
+talleresPinturaCheckBox.setSelected(false);
+lineaPinturaCheckBox.setSelected(false);
+clasesDibujoCheckBox.setSelected(false);
+grupoDibujoCheckBox.setSelected(false);
+talleresDibujoCheckBox.setSelected(false);
+lineaDibujoCheckBox.setSelected(false);
+clasesEsculturaCheckBox.setSelected(false);
+estudioEsculturaCheckBox.setSelected(false);
+talleresEscultaraCheckBox.setSelected(false);
+esculturaLineaChecklBox.setSelected(false);
+cursosCineCheckBox.setSelected(false);
+clubCineCheckBox.setSelected(false);
+festivalesCineCheckBox.setSelected(false);
+cineLineaCheckBox.setSelected(false);
+escrituraCreativaCheckBox.setSelected(false);
+clubEscrituraCheckBox.setSelected(false);
+talleresEscrituraCheckBox.setSelected(false);
+lineaEscrituraCheckBox.setSelected(false);
+desafiosLecturaCheckBox.setSelected(false);
+clubLecturaCheckBox.setSelected(false);
+filosofiaEscrituraCheckBox.setSelected(false);
+maratonLecturaCheckBox.setSelected(false);
+antologiaPoesiaCheckBox.setSelected(false);
+escribirPoesiaCheckBox.setSelected(false);
+eventosPoesiaCheckBox.setSelected(false);
+lineaPoesiaCheckBox.setSelected(false);
+nuevoIdiomaCheckBox.setSelected(false);
+literaturaIdiomaCheckBox.setSelected(false);
+intercambiosIdiomaCheckBox.setSelected(false);
+otrosIdiomaCheckBox.setSelected(false);
+clasesCantoCheckBox.setSelected(false);
+karaokeCantoCheckBox.setSelected(false);
+estilosCantoCheckBox.setSelected(false);
+actividadesCantoCheckBox.setSelected(false);
+clasesBaileCheckBox.setSelected(false);
+casaBaileCheckBox.setSelected(false);
+eventosBaileCheckBox.setSelected(false);
+estilosBaileCheckBox.setSelected(false);
+softwareProduccionCheckBox.setSelected(false);
+instrumentosProduccionCheckBox.setSelected(false);
+composicionProduccionCheckBox.setSelected(false);
+musicosProduccionCheckBox.setSelected(false);
+experimentosFisicaCheckBox.setSelected(false);
+librosFisicaCheckBox.setSelected(false);
+videosFisicaCheckBox.setSelected(false);
+lineaFisicaCheckBox.setSelected(false);
+librosLogicaCheckBox.setSelected(false);
+lineaLogicaCheckBox.setSelected(false);
+conferenciasLogicaCheckBox.setSelected(false);
+gruposLogicaCheckBox.setSelected(false);
+librosProgramacionCheckBox.setSelected(false);
+lineaProgramacionCheckBox.setSelected(false);
+talleresProgramacionCheckBox.setSelected(false);
+comunidadesProgramacionCheckBox.setSelected(false);
+librosMatematicasCheckBox.setSelected(false);
+lineaMatematicasCheckBox.setSelected(false);
+clasesMatematicasCheckBox.setSelected(false);
+gruposMatematicasCheckBox.setSelected(false);
+
+}
+
+ 
+    
+    
+    // Variables declaration - do not modify                     
+    private javax.swing.JCheckBox actividadesCantoCheckBox;
+    private javax.swing.JCheckBox antologiaPoesiaCheckBox;
+    private javax.swing.JCheckBox arteCheckBox;
+    private javax.swing.JButton avanzarBoton;
+    private javax.swing.JCheckBox cantoCheckBox;
+    private javax.swing.JCheckBox casaBaileCheckBox;
+    private javax.swing.JCheckBox cienciaCheckBox;
+    private javax.swing.JCheckBox cineCheckBox;
+    private javax.swing.JCheckBox cineLineaCheckBox;
+    private javax.swing.JCheckBox clasesBaileCheckBox;
+    private javax.swing.JCheckBox clasesCantoCheckBox;
+    private javax.swing.JCheckBox clasesDibujoCheckBox;
+    private javax.swing.JCheckBox clasesEsculturaCheckBox;
+    private javax.swing.JCheckBox clasesMatematicasCheckBox;
+    private javax.swing.JCheckBox clubCineCheckBox;
+    private javax.swing.JCheckBox clubEscrituraCheckBox;
+    private javax.swing.JCheckBox clubLecturaCheckBox;
+    private javax.swing.JCheckBox composicionProduccionCheckBox;
+    private javax.swing.JCheckBox comunidadesProgramacionCheckBox;
+    private javax.swing.JCheckBox conferenciasLogicaCheckBox;
+    private javax.swing.JPanel cositaArriba;
+    private javax.swing.JCheckBox cursoPinturaCheckBox;
+    private javax.swing.JCheckBox cursosCineCheckBox;
+    private javax.swing.JCheckBox danzaCheckBox;
+    private javax.swing.JCheckBox desafiosLecturaCheckBox;
+    private javax.swing.JCheckBox dibujarCheckBox;
+    private javax.swing.JCheckBox escribirCheckBox;
+    private javax.swing.JCheckBox escribirPoesiaCheckBox;
+    private javax.swing.JCheckBox escrituraCreativaCheckBox;
+    private javax.swing.JCheckBox esculturaCheckBox;
+    private javax.swing.JCheckBox esculturaLineaChecklBox;
+    private javax.swing.JCheckBox estilosBaileCheckBox;
+    private javax.swing.JCheckBox estilosCantoCheckBox;
+    private javax.swing.JCheckBox estudioEsculturaCheckBox;
+    private javax.swing.JCheckBox eventosBaileCheckBox;
+    private javax.swing.JCheckBox eventosPoesiaCheckBox;
+    private javax.swing.JCheckBox experimentosFisicaCheckBox;
+    private javax.swing.JCheckBox festivalesCineCheckBox;
+    private javax.swing.JCheckBox filosofiaEscrituraCheckBox;
+    private javax.swing.JCheckBox fisicaCheckBox;
+    private javax.swing.JCheckBox grupoDibujoCheckBox;
+    private javax.swing.JCheckBox grupoPinturaCheckBox;
+    private javax.swing.JCheckBox gruposLogicaCheckBox;
+    private javax.swing.JCheckBox gruposMatematicasCheckBox;
+    private javax.swing.JCheckBox idiomaCheckBox;
+    private javax.swing.JCheckBox instrumentosProduccionCheckBox;
+    private javax.swing.JCheckBox intercambiosIdiomaCheckBox;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JCheckBox karaokeCantoCheckBox;
+    private javax.swing.JCheckBox leerCheckBox;
+    private javax.swing.JCheckBox librosFisicaCheckBox;
+    private javax.swing.JCheckBox librosLogicaCheckBox;
+    private javax.swing.JCheckBox librosMatematicasCheckBox;
+    private javax.swing.JCheckBox librosProgramacionCheckBox;
+    private javax.swing.JCheckBox lineaDibujoCheckBox;
+    private javax.swing.JCheckBox lineaEscrituraCheckBox;
+    private javax.swing.JCheckBox lineaFisicaCheckBox;
+    private javax.swing.JCheckBox lineaLogicaCheckBox;
+    private javax.swing.JCheckBox lineaMatematicasCheckBox;
+    private javax.swing.JCheckBox lineaPinturaCheckBox;
+    private javax.swing.JCheckBox lineaPoesiaCheckBox;
+    private javax.swing.JCheckBox lineaProgramacionCheckBox;
+    private javax.swing.JCheckBox literaturaCheckBox;
+    private javax.swing.JCheckBox literaturaIdiomaCheckBox;
+    private javax.swing.JCheckBox logicaCheckBox;
+    private javax.swing.JCheckBox maratonLecturaCheckBox;
+    private javax.swing.JCheckBox matematicasCheckBox;
+    private javax.swing.JCheckBox musicaCheckBox;
+    private javax.swing.JCheckBox musicosProduccionCheckBox;
+    private javax.swing.JCheckBox nuevoIdiomaCheckBox;
+    private javax.swing.JCheckBox otrosIdiomaCheckBox;
+    private javax.swing.JCheckBox pinturaCheckBox;
+    private javax.swing.JCheckBox poesiaCheckBox;
+    private javax.swing.JCheckBox produccionCheckBox;
+    private javax.swing.JCheckBox programacionCheckBox;
+    private javax.swing.JCheckBox softwareProduccionCheckBox;
+    private javax.swing.JCheckBox talleresDibujoCheckBox;
+    private javax.swing.JCheckBox talleresEscrituraCheckBox;
+    private javax.swing.JCheckBox talleresEscultaraCheckBox;
+    private javax.swing.JCheckBox talleresPinturaCheckBox;
+    private javax.swing.JCheckBox talleresProgramacionCheckBox;
+    private javax.swing.JCheckBox videosFisicaCheckBox;
+    private javax.swing.JButton volverBoton;
+    // End of variables declaration                   
+
+   public String getNombreActividad(){
+       if(expAct.moverNombre()){
+    expAct.dispose();
+    AgregarActividad.nombreNuevoHobby = titulo;
+    
+       }
+       return AgregarActividad.nombreNuevoHobby;
+}
+   
+}
