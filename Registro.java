@@ -1,13 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package interfaz_grafica;
 
 import conexion.ConexionMySql;
+import java.awt.Color;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
@@ -20,7 +19,7 @@ public class Registro extends javax.swing.JFrame {
   conexion.ConexionMySql con = new ConexionMySql();
   Connection cn = con.conectar();
 
-  
+  int xMouse, yMouse;
   
     public Registro() {
         initComponents();
@@ -52,19 +51,24 @@ public class Registro extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         txrPassword = new javax.swing.JPasswordField();
         guardarDatos = new javax.swing.JButton();
+        cositaArriba = new javax.swing.JPanel();
+        panelX = new javax.swing.JPanel();
+        xLabel = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1384, 693));
         setMinimumSize(new java.awt.Dimension(1384, 693));
+        setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(231, 213, 200));
         jPanel1.setMaximumSize(new java.awt.Dimension(1384, 693));
         jPanel1.setMinimumSize(new java.awt.Dimension(1384, 693));
         jPanel1.setPreferredSize(new java.awt.Dimension(1384, 693));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setBackground(new java.awt.Color(24, 0, 55));
         jLabel2.setFont(new java.awt.Font("Montserrat", 0, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 102, 255));
+        jLabel2.setForeground(new java.awt.Color(24, 0, 55));
         jLabel2.setText("REGISTRO");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 300, 90));
 
@@ -72,7 +76,7 @@ public class Registro extends javax.swing.JFrame {
 
         txrNombre.setBackground(new java.awt.Color(234, 231, 231));
         txrNombre.setColumns(1);
-        txrNombre.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txrNombre.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         txrNombre.setForeground(new java.awt.Color(0, 0, 0));
         txrNombre.setRows(1);
         txrNombre.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -97,7 +101,7 @@ public class Registro extends javax.swing.JFrame {
 
         txrApellido.setBackground(new java.awt.Color(234, 231, 231));
         txrApellido.setColumns(1);
-        txrApellido.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txrApellido.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         txrApellido.setForeground(new java.awt.Color(0, 0, 0));
         txrApellido.setRows(1);
         txrApellido.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -117,7 +121,7 @@ public class Registro extends javax.swing.JFrame {
 
         txrEmail.setBackground(new java.awt.Color(234, 231, 231));
         txrEmail.setColumns(1);
-        txrEmail.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txrEmail.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         txrEmail.setForeground(new java.awt.Color(0, 0, 0));
         txrEmail.setRows(1);
         txrEmail.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -132,7 +136,7 @@ public class Registro extends javax.swing.JFrame {
 
         txrUsuario.setBackground(new java.awt.Color(234, 231, 231));
         txrUsuario.setColumns(1);
-        txrUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txrUsuario.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         txrUsuario.setForeground(new java.awt.Color(0, 0, 0));
         txrUsuario.setRows(1);
         txrUsuario.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -154,6 +158,7 @@ public class Registro extends javax.swing.JFrame {
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 310, 233, -1));
 
         txrPassword.setBackground(new java.awt.Color(234, 231, 231));
+        txrPassword.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         txrPassword.setForeground(new java.awt.Color(0, 0, 0));
         txrPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,7 +167,7 @@ public class Registro extends javax.swing.JFrame {
         });
         jPanel1.add(txrPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 350, 440, 50));
 
-        guardarDatos.setBackground(new java.awt.Color(102, 102, 255));
+        guardarDatos.setBackground(new java.awt.Color(24, 0, 55));
         guardarDatos.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
         guardarDatos.setForeground(new java.awt.Color(255, 255, 255));
         guardarDatos.setText("REGISTRARSE");
@@ -172,6 +177,56 @@ public class Registro extends javax.swing.JFrame {
             }
         });
         jPanel1.add(guardarDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 480, 250, 52));
+
+        cositaArriba.setBackground(new java.awt.Color(231, 213, 200));
+        cositaArriba.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                cositaArribaMouseDragged(evt);
+            }
+        });
+        cositaArriba.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                cositaArribaMousePressed(evt);
+            }
+        });
+        cositaArriba.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        panelX.setBackground(new java.awt.Color(231, 213, 200));
+
+        xLabel.setBackground(new java.awt.Color(231, 213, 200));
+        xLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        xLabel.setForeground(new java.awt.Color(0, 0, 0));
+        xLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        xLabel.setText("X");
+        xLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                xLabelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                xLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                xLabelMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelXLayout = new javax.swing.GroupLayout(panelX);
+        panelX.setLayout(panelXLayout);
+        panelXLayout.setHorizontalGroup(
+            panelXLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelXLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(xLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        panelXLayout.setVerticalGroup(
+            panelXLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(xLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        cositaArriba.add(panelX, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 0, 60, 40));
+
+        jPanel1.add(cositaArriba, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1390, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -197,12 +252,29 @@ public class Registro extends javax.swing.JFrame {
         String email = txrEmail.getText();
         String usuario = txrUsuario.getText();
         String password = txrPassword.getText();
+        boolean usuarioNuevo = false;
         
         if(nombre.isEmpty()|| apellido.isEmpty()|| email.isEmpty()|| usuario.isEmpty()|| password.isEmpty()){
             JOptionPane.showMessageDialog(null, "DEBE COMPLETAR TODOS LOS DATOS");
             
         }
         else{
+            try {
+            
+            PreparedStatement ps = cn.prepareStatement("SELECT username FROM datos WHERE username = ?");
+            ps.setString(1, usuario);
+            
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                JOptionPane.showMessageDialog(null, "Nombre de usuario no disponible ");
+            }else{
+                usuarioNuevo = true;
+            }
+            }catch(SQLException e) {
+       JOptionPane.showMessageDialog(null, "Error al verificar las credenciales: " + e.getMessage());
+            }
+            if(usuarioNuevo){
+            
             try {
                 String consulta = "INSERT INTO datos(`nombre`, `apellido`, `email`, `password`, `username`) VALUES ('"+nombre+"','"+apellido+"','"+email+"','"+password+"','"+usuario+"')";
                 
@@ -222,9 +294,39 @@ public class Registro extends javax.swing.JFrame {
                  JOptionPane.showMessageDialog(null, "NO SE LOGRO GUARDAR LOS DATOS, INTENTA NUEVAMENTE"+ e);
                 
             }
+            
+            }
         }
 
     }                                            
+
+    private void cositaArribaMousePressed(java.awt.event.MouseEvent evt) {                                          
+        xMouse = evt.getX();
+        yMouse = evt.getY();  
+    }                                         
+
+    private void cositaArribaMouseDragged(java.awt.event.MouseEvent evt) {                                          
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }                                         
+
+    private void xLabelMouseExited(java.awt.event.MouseEvent evt) {                                   
+         panelX.setBackground(new Color(231,213,200));
+         xLabel.setForeground(Color.black);
+    }                                  
+
+    private void xLabelMouseEntered(java.awt.event.MouseEvent evt) {                                    
+         panelX.setBackground(new Color(255,0,51));
+        xLabel.setForeground(Color.white);
+    }                                   
+
+    private void xLabelMouseClicked(java.awt.event.MouseEvent evt) {                                    
+        dispose();
+        
+        
+        
+    }                                   
 
   
    void limpiarDatos(){
@@ -238,6 +340,7 @@ public class Registro extends javax.swing.JFrame {
     }
   
     // Variables declaration - do not modify                     
+    private javax.swing.JPanel cositaArriba;
     private javax.swing.JButton guardarDatos;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -250,10 +353,12 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JPanel panelX;
     private javax.swing.JTextArea txrApellido;
     private javax.swing.JTextArea txrEmail;
     private javax.swing.JTextArea txrNombre;
     private javax.swing.JPasswordField txrPassword;
     private javax.swing.JTextArea txrUsuario;
+    private javax.swing.JLabel xLabel;
     // End of variables declaration                   
 }
