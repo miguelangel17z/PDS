@@ -1,0 +1,333 @@
+
+package interfaz_grafica;
+
+import conexion.ConexionMySql;
+import java.awt.Color;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author migue
+ */
+public class EliminarActividad extends javax.swing.JFrame {
+
+    int xMouse, yMouse;
+ConexionMySql con = new ConexionMySql();
+Connection cn = con.conectar();
+
+ static String actividadNombre;
+EstaSeguroPantalla estaSeguro = new EstaSeguroPantalla();
+ private String username = Interfaz.UsernameGuardado;
+    public EliminarActividad() {
+        initComponents();
+        labelVerficaFecha.setVisible(true);
+
+       
+  
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        mensajePantalla2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        fechaEscogida = new com.toedter.calendar.JDateChooser();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        actividadesComboBox = new javax.swing.JComboBox<>();
+        borrarBoton = new javax.swing.JButton();
+        mensajePantalla = new javax.swing.JLabel();
+        labelVerficaFecha = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        cositaArriba = new javax.swing.JPanel();
+        panelX = new javax.swing.JPanel();
+        xLabel = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(564, 420));
+        setMinimumSize(new java.awt.Dimension(564, 420));
+        setUndecorated(true);
+        setResizable(false);
+
+        jPanel1.setBackground(new java.awt.Color(17, 18, 17));
+        jPanel1.setForeground(new java.awt.Color(102, 102, 102));
+        jPanel1.setMaximumSize(new java.awt.Dimension(564, 420));
+        jPanel1.setMinimumSize(new java.awt.Dimension(564, 420));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        mensajePantalla2.setBackground(new java.awt.Color(255, 255, 255));
+        mensajePantalla2.setFont(new java.awt.Font("Montserrat Black", 0, 14)); // NOI18N
+        mensajePantalla2.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(mensajePantalla2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 280, 363, 30));
+
+        jLabel1.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("ELIMINAR ACTIVIDAD\n");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(147, 24, -1, 49));
+
+        fechaEscogida.setBackground(new java.awt.Color(0, 0, 0));
+        fechaEscogida.setForeground(new java.awt.Color(51, 51, 51));
+        jPanel1.add(fechaEscogida, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 114, 504, 49));
+
+        jLabel2.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel2.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel2.setText("ACTIVIDAD");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 200, 387, 28));
+
+        jLabel3.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel3.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel3.setText("FECHA ACTIVIDAD:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 85, 387, 28));
+
+        actividadesComboBox.setBackground(new java.awt.Color(255, 255, 255));
+        actividadesComboBox.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        actividadesComboBox.setForeground(new java.awt.Color(102, 102, 102));
+        actividadesComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una fecha" }));
+        actividadesComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actividadesComboBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(actividadesComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 230, 504, 50));
+
+        borrarBoton.setBackground(new java.awt.Color(24, 0, 55));
+        borrarBoton.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        borrarBoton.setForeground(new java.awt.Color(255, 255, 255));
+        borrarBoton.setText("BORRAR");
+        borrarBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                borrarBotonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(borrarBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 183, 57));
+
+        mensajePantalla.setBackground(new java.awt.Color(255, 255, 255));
+        mensajePantalla.setFont(new java.awt.Font("Montserrat Black", 0, 14)); // NOI18N
+        mensajePantalla.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(mensajePantalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 363, 30));
+        jPanel1.add(labelVerficaFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 510, 60));
+
+        jButton1.setBackground(new java.awt.Color(59, 59, 59));
+        jButton1.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("BUSCAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 110, 30));
+
+        cositaArriba.setBackground(new java.awt.Color(17, 18, 17));
+        cositaArriba.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                cositaArribaMouseDragged(evt);
+            }
+        });
+        cositaArriba.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cositaArribaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cositaArribaMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                cositaArribaMousePressed(evt);
+            }
+        });
+        cositaArriba.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        panelX.setBackground(new java.awt.Color(17, 18, 17));
+
+        xLabel.setBackground(new java.awt.Color(153, 153, 153));
+        xLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        xLabel.setForeground(new java.awt.Color(153, 153, 153));
+        xLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        xLabel.setText("<—");
+        xLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                xLabelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                xLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                xLabelMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelXLayout = new javax.swing.GroupLayout(panelX);
+        panelX.setLayout(panelXLayout);
+        panelXLayout.setHorizontalGroup(
+            panelXLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelXLayout.createSequentialGroup()
+                .addComponent(xLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        panelXLayout.setVerticalGroup(
+            panelXLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(xLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        cositaArriba.add(panelX, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 40));
+
+        jPanel1.add(cositaArriba, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 50));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    private void actividadesComboBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+   if(actividadesComboBox.getSelectedItem()!= null && !EstaSeguroPantalla.instancia){
+        actividadNombre = actividadesComboBox.getSelectedItem().toString(); 
+        System.out.println(actividadNombre);
+   }
+    }                                                   
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+     
+        verificarFecha();
+       
+    }                                        
+
+    private void borrarBotonActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        if(actividadesComboBox.getSelectedItem().equals("Seleccione una fecha") || fechaEscogida.getDate() == null){
+            
+            mensajePantalla2.setText("Ingrese los datos correctamente");
+            
+        }else {
+            estaSeguro.setVisible(true);
+            estaSeguro.setLocationRelativeTo(null);
+            EstaSeguroPantalla.instancia = true;
+            dispose();
+            limpiarDatos();
+            
+    }
+        
+    }                                           
+
+    private void cositaArribaMouseEntered(java.awt.event.MouseEvent evt) {                                          
+        // TODO add your handling code here:
+    }                                         
+
+    private void cositaArribaMouseExited(java.awt.event.MouseEvent evt) {                                         
+        // TODO add your handling code here:
+    }                                        
+
+    private void cositaArribaMousePressed(java.awt.event.MouseEvent evt) {                                          
+       xMouse = evt.getX();
+        yMouse = evt.getY();  
+    }                                         
+
+    private void cositaArribaMouseDragged(java.awt.event.MouseEvent evt) {                                          
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }                                         
+
+    private void xLabelMouseClicked(java.awt.event.MouseEvent evt) {                                    
+        limpiarDatos();
+        dispose();
+    }                                   
+
+    private void xLabelMouseEntered(java.awt.event.MouseEvent evt) {                                    
+         panelX.setBackground(new Color(255,0,51));
+        xLabel.setForeground(Color.white);
+    }                                   
+
+    private void xLabelMouseExited(java.awt.event.MouseEvent evt) {                                   
+        panelX.setBackground(new Color(17,18,17));
+        xLabel.setForeground(new Color(153,153,153));
+    }                                  
+   
+ private void seleccionarActividades(java.sql.Date fecha){
+     try{
+                        
+                          PreparedStatement ps = cn.prepareStatement("SELECT `actividad` FROM `actividades` WHERE username = ? AND fecha = ? ORDER BY hora ASC");
+                         ps.setString(1, username);
+                         ps.setDate(2, fecha);
+                         ResultSet rs = ps.executeQuery();
+                        actividadesComboBox.removeAllItems();
+                        int contador = 0;
+                        
+                         while(rs.next()){
+                             
+                             actividadesComboBox.addItem(rs.getString("actividad"));
+                             contador++;
+                    
+                         }
+                         if(contador == 0){
+                              mensajePantalla2.setText("No hay actividades en la fecha seleccionada");
+                         }
+                            
+                     }catch(SQLException e){
+                           JOptionPane.showMessageDialog(null, "Error al verificar las credenciales: " + e.getMessage());
+                     }
+ }
+
+
+ public boolean verificarFecha(){
+     java.util.Date fechaSeleccionada = fechaEscogida.getDate();
+    if (fechaSeleccionada != null) {
+        mensajePantalla.setText("");
+        java.sql.Date fecha = new java.sql.Date(fechaSeleccionada.getTime());
+       Pantalla1.fechaS = fecha;
+        System.out.println(Pantalla1.fechaS);
+        mensajePantalla2.setText("");
+        seleccionarActividades(fecha);   
+        
+        return false; 
+        
+    } else {
+        mensajePantalla.setText("Ingrese una fecha válida");
+        return true; 
+    }
+}
+ 
+ public void limpiarDatos(){
+     
+     actividadesComboBox.removeAllItems();
+            actividadesComboBox.addItem("Seleccione una fecha");
+            mensajePantalla2.setText("");
+            fechaEscogida.setDate(null);
+            panelX.setBackground(new Color(17,18,17));
+        xLabel.setForeground(new Color(153,153,153));
+ }
+
+
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JComboBox<String> actividadesComboBox;
+    private javax.swing.JButton borrarBoton;
+    private javax.swing.JPanel cositaArriba;
+    private com.toedter.calendar.JDateChooser fechaEscogida;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel labelVerficaFecha;
+    private javax.swing.JLabel mensajePantalla;
+    private javax.swing.JLabel mensajePantalla2;
+    private javax.swing.JPanel panelX;
+    private javax.swing.JLabel xLabel;
+    // End of variables declaration                   
+}
