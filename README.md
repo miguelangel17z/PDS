@@ -1,4 +1,4 @@
-Explicacion de cada clase:
+Explicacion MUY resumida de cada clase:
 
 Healtime: Clase main donde se instancio la clase interfaz, y hace que sea visible.
 
@@ -12,4 +12,12 @@ Pantalla1: Es la pantalla principal del programa, en esta se encuentra la base d
 
 AgregarActividad: Donde el usuario puede ingresar y guardar los datos de su nueva actividad.
 
-Nota: La explicacion detallada de cada clase en el video adjuntado en la entrega 3.
+EliminarActividad: Usuario puede escoger fecha y le apareceran las actividades de ese dia y la puede eliminar.
+
+EstaSeguroPantalla: Pantalla de advertencia que sale luego de darle eliminar en la clase EliminarPantalla y hace todo el proceso de delete con mysql
+
+recomiendamePantalla: Pantalla donde se hace el proceso de recomendacion.
+
+ExplicacionActividadesPantalla: Es la pantalla que se encarga de mostrar la explicacion de cada posible actividad que quiera escoger el usuario de las recomendaciones.
+
+
