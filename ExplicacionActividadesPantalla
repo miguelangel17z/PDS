@@ -1,0 +1,143 @@
+package interfaz_grafica;
+
+public class ExplicacionActividadesPantalla extends javax.swing.JFrame {
+    int xMouse, yMouse;
+    public ExplicacionActividadesPantalla() {
+        initComponents();
+    }
+
+ 
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        volverBoton = new javax.swing.JButton();
+        agregarBoton = new javax.swing.JButton();
+        tituloActividadtxt = new javax.swing.JLabel();
+        cuerpoActividadtxt = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        cositaArriba = new javax.swing.JPanel();
+
+        jLabel1.setText("jLabel1");
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(24, 0, 55));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        volverBoton.setBackground(new java.awt.Color(4, 32, 157));
+        volverBoton.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        volverBoton.setForeground(new java.awt.Color(255, 255, 255));
+        volverBoton.setText("<—");
+        volverBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverBotonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(volverBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 345, 60, 40));
+
+        agregarBoton.setBackground(new java.awt.Color(24, 0, 55));
+        agregarBoton.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        agregarBoton.setForeground(new java.awt.Color(255, 255, 255));
+        agregarBoton.setText("AGREGAR NUEVO HOBBY");
+        agregarBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarBotonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(agregarBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 345, 310, 40));
+
+        tituloActividadtxt.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        tituloActividadtxt.setForeground(new java.awt.Color(255, 255, 255));
+        tituloActividadtxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tituloActividadtxt.setText("Libros y recursos introductorios");
+        jPanel1.add(tituloActividadtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 8, 560, 40));
+
+        cuerpoActividadtxt.setFont(new java.awt.Font("Roboto", 0, 22)); // NOI18N
+        cuerpoActividadtxt.setForeground(new java.awt.Color(255, 255, 255));
+        cuerpoActividadtxt.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        cuerpoActividadtxt.setText("<html>Busca libros y recursos en línea diseñados para principiantes que cubran los conceptos básicos de matemáticas. Algunos libros recomendados incluyen \"Matemáticas para dummies\" de Mary Jane Sterling, \"Introducción a las matemáticas\" de Gilbert Strang,  e \"Introducción a la teoría de números\" de Hardy y Wright. Estos recursos te proporcionarán una introducción sólida a los fundamentos de las matemáticas y te guiarán a través de los conceptos básicos.");
+        cuerpoActividadtxt.setToolTipText("");
+        cuerpoActividadtxt.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel1.add(cuerpoActividadtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 68, 540, 270));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\migue\\Pictures\\fondomelo.png")); // NOI18N
+        jLabel3.setText("jLabel3");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 560, 350));
+
+        cositaArriba.setBackground(new java.awt.Color(24, 0, 55));
+        cositaArriba.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                cositaArribaMouseDragged(evt);
+            }
+        });
+        cositaArriba.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                cositaArribaMousePressed(evt);
+            }
+        });
+        cositaArriba.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(cositaArriba, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 60));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 410));
+
+        pack();
+    }// </editor-fold>                        
+
+    private void volverBotonActionPerformed(java.awt.event.ActionEvent evt) {                                            
+   dispose();
+   moverNombre();
+   
+    }                                           
+   
+   
+    
+    private void agregarBotonActionPerformed(java.awt.event.ActionEvent evt) {                                             
+recomiendamePantalla.cerrarRecomiendamePantalla(recomiendamePantalla.instanciaPantalla);
+        dispose();
+        String nombreActividad = recomiendamePantalla.titulo;  
+AgregarActividad agregarActividadFrame = new AgregarActividad(nombreActividad);  
+agregarActividadFrame.setVisible(true);
+agregarActividadFrame.setLocationRelativeTo(null);
+
+
+
+    }                                            
+
+    private void cositaArribaMousePressed(java.awt.event.MouseEvent evt) {                                          
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }                                         
+
+    private void cositaArribaMouseDragged(java.awt.event.MouseEvent evt) {                                          
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }                                         
+
+    public void cambiarTexto(String titulo, String cuerpo){
+        tituloActividadtxt.setText(titulo);
+        cuerpoActividadtxt.setText(cuerpo);
+    }
+    
+    public boolean moverNombre(){
+        return true;
+    }
+    
+    
+    
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton agregarBoton;
+    private javax.swing.JPanel cositaArriba;
+    private javax.swing.JLabel cuerpoActividadtxt;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel tituloActividadtxt;
+    private javax.swing.JButton volverBoton;
+    // End of variables declaration                   
+}
